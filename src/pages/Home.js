@@ -107,7 +107,7 @@ const Home = () => {
           </div>
         </div>
       </section> */}
-      {/* <div class="bg-[#f3f4f6] p-5">
+      <div class="bg-[#f3f4f6] p-5">
         <div class="grid xl:grid-cols-2 gap-8 sm:grid-cols-1 ">
           <Swiper
             style={{
@@ -232,7 +232,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
       <div className="mx-5">
         {/* <Swiper style={{
             "--swiper-pagination-color": "#206c43",
