@@ -34,15 +34,15 @@ const Card = ({ item  }) => {
           </div>
         </div>
       </div>:
-
+// h-[220px]
 
       <div class="
             max-w-[280px]
-             mb-12 overflow-hidden  bg-white border border-gray-200 rounded-[20px] shadow dark:bg-gray-800 dark:border-gray-700 ">
+             mb-12 overflow-hidden  bg-white border border-gray-200 rounded-[20px] dark:bg-gray-800 dark:border-gray-700 box-shadow">
               <Link className="link " to={`/product/${item.id}`}>
                 <div className="w-full border-b-2 border-gray-200 overflow-hidden bg-cover bg-no-repeat rounded-t-[20px]">
                   <img
-                    class=" h-[220px] w-full transition duration-300 ease-in-out hover:scale-110  "
+                    class="h-[220px]  w-full transition duration-300 ease-in-out hover:scale-110  "
                     src={
                      
                       item.attributes?.img?.data?.attributes?.url
@@ -53,7 +53,7 @@ const Card = ({ item  }) => {
                   />
                 </div>
               </Link>
-              <div class="px-5 pt-5 hight-[265px] ">
+              <div class="px-5 pt-5  ">
                 {/* <a href="#"> */}
                   <h5 class="mb-2 text-lg  font-semibold  text-gray-900 dark:text-white">
                     {item?.attributes.title}
@@ -72,7 +72,7 @@ const Card = ({ item  }) => {
                          < className="font-semibold text-slate-500 text-lg mt-[6px] ml-8 leading-tight line-through">₹</ span>
                                <h5 className="mt-1 pl-1 font-semibold text-lg  text-slate-500 line-through  ">8000</h5></li> */}
                 <li className="list-none flex pb-2">
-                  <h6 className="font-semibold text-lg py-1 mb-0">
+                  <h6 className="font-semibold text-lg py-1 mb-0 dark:text-white">
                     ₹{item?.attributes.price}
                   </h6>
                   <h6 className="font-small text-lg py-1 mb-0 line-through pl-4 text-gray-500">
@@ -80,24 +80,24 @@ const Card = ({ item  }) => {
                   </h6>
                 </li>
       
-                {/* <li className="flex list-none">
+                <li className="flex list-none">
                   <span className="font-light text-[14px] text-green-800">
                     Care For
                   </span>
                   <h6 className="text-[14px] font-light mt-[2px] pl-2 mb-4">
                     Gas, Acidity, Constipation
                   </h6>
-                </li> */}
+                </li>
               </div>
               <li className="list-none flex ">
              
-                <button className="w-[50%] bg-[#318e4c] py-[10px] rounded-bl-[19px] mr-[1px] text-white font-semibold">
+                <button className="w-[50%] bg-[#318e4c] dark:bg-gray-800 py-[10px] rounded-bl-[19px] mr-[1px] text-white font-semibold">
                 <Link  to={`/product/${item.id}`}>
                   Know More</Link>
                 </button>
                 
                 <button
-                  className="bg-[#206c43] py-[10px] w-[50%] rounded-br-[19px] text-white font-semibold"
+                  className="bg-[#206c43] dark:bg-gray-700 py-[10px] w-[50%] rounded-br-[19px] text-white font-semibold"
                   onClick={() =>
                     dispatch(
                       addToCart({

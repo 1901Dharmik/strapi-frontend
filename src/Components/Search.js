@@ -37,7 +37,7 @@ const Search = ({ setSearchModal }) => {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-8 h-8 svg-search"
+            className="w-8 h-8 svg-search "
           >
             <path
               strokeLinecap="round"
@@ -48,7 +48,7 @@ const Search = ({ setSearchModal }) => {
         </div>
        
        
-        <div className="search-result-contant flex shadow">
+        <div className="search-result-contant flex shadow max-h-[400px]">
        
           <div className="search-result grid xl:grid-cols-3 gap-4  w-full">
             {data?.map((item) => (

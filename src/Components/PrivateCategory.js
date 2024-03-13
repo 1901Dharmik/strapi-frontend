@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
-const Dcategory = () => {
+const PrivateCategory = () => {
   const { data } = useFetch(`/categories?populate=*`);
   const navigate = useNavigate();
   return (
@@ -9,7 +9,7 @@ const Dcategory = () => {
       <div>
         
        
-        <div class="mt-10 grid grid-cols-2 gap-6 lg:mt-16 lg:grid-cols-4 lg:gap-4 mx-6 ">
+        <div class="mt-10 grid grid-cols-2 gap-6 lg:mt-16 lg:grid-cols-4 lg:gap-4 mx-5 ">
           {data?.map((item) => (
             <article
               key={item.id}
@@ -22,7 +22,7 @@ const Dcategory = () => {
                   src={
                    
                     
-                    item?.attributes?.img?.data[0]?.attributes?.url
+                    item?.attributes?.img?.data[1]?.attributes?.url
                    
                   }
                   draggable="false"
@@ -55,4 +55,4 @@ const Dcategory = () => {
   );
 };
 
-export default Dcategory;
+export default PrivateCategory;

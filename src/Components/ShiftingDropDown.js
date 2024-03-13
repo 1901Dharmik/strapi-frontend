@@ -213,7 +213,7 @@ const Pricing = () => {
   return (
     <div className="grid grid-cols-3 gap-4 divide-x divide-neutral-200">
       <a
-        href="#"
+        href="./SelectionMenu"
         className="flex w-full flex-col items-center justify-center py-2 text-gray-400 transition-colors hover:text-gray-700"
       >
         <FiHome className="mb-2 text-xl text-green-800" />

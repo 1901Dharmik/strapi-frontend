@@ -15,6 +15,7 @@ import Meta from "../Components/Meta/Meta";
 // import required modules
 import { FreeMode, Pagination, Autoplay } from "swiper/modules";
 import Dcategory from "../Components/Dcategory";
+
 // import SubCategory from "../Components/Categories/SubCategory";
 
 const Home = () => {
@@ -22,31 +23,27 @@ const Home = () => {
   //   `/categories?populate=*`
   // );
   return (
-   
-    <div className="body-bg"  style={{backdropFilter: 'blur(20px)'}}>
-       <Meta title={"Home"} />
-      
-      {" "}
-      {/* <!-- component --> */}
-
-
-      <section className="pt-10 overflow-hidden
+    <div className="body-bg" style={{ backdropFilter: "blur(20px)" }}>
+      <Meta title={"Home"} /> {/* <!-- component --> */}
+      <section
+        className="pt-10 overflow-hidden
         bg-[#e6ffe6] 
-       md:pt-0 sm:pt-16 2xl:pt-12 home_image " >
+       md:pt-0 sm:pt-16 2xl:pt-12 home_image "
+      >
         <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
           <div className="grid items-center grid-cols-1 md:grid-cols-2">
             <div>
               <h1 className="text-4xl  font-bold leading-snug text-[#018662] sm:text-4xl lg:text-5xl xl:text-6xl xl:leading-snug">
-                Online &nbsp;<span>Medicine</span>{" "}
+                Online &nbsp;<span className="text-[#555]">Medicine</span>{" "}
                 <br className="block sm:hidden" />
-                <span>Store</span>&nbsp;&nbsp;For All
+                <span className="text-[#555]">Store</span>&nbsp;&nbsp;For All
               </h1>
               <p className="max-w-lg mt-3 text-md leading-relaxed text-gray-700 md:mt-8 pb-6">
                 Get A Good Guidence From Our Healthcare Experts.
               </p>
               <a
                 href=""
-                className=" home-banner-btn text-small text-white border rounded-md bg-[#206c43] p-3"
+                className=" home-banner-btn text-small text-white border-2 border-gray-200 rounded-lg bg-[#206c43] p-3 shadow-md hover:bg-green-700"
               >
                 Book Free Consultation
               </a>
@@ -70,11 +67,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-    
-     
-
-
-
       {/* <section className="bg-white m-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-0 pt-4 flex justify-between items-center">
           <div className="space-y-6">
@@ -107,7 +99,7 @@ const Home = () => {
           </div>
         </div>
       </section> */}
-      <div class="bg-[#f3f4f6] p-5">
+      {/* <div class="bg-[#f3f4f6] p-5">
         <div class="grid xl:grid-cols-2 gap-8 sm:grid-cols-1 ">
           <Swiper
             style={{
@@ -232,7 +224,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="mx-5">
         {/* <Swiper style={{
             "--swiper-pagination-color": "#206c43",
@@ -381,14 +373,12 @@ const Home = () => {
         style={{ padding: "30px" }}
       />
       <FeaturedProducts type="Immunity Care" />
-      
-        {/* <div className="card">
+      {/* <div className="card">
           <div className="image">
            <img src="./images/icerose.jpg" alt="" className="mainImg" />
             <img src="./images/gesofine.jpg" alt="" className="secondImg" />
           </div>
         </div> */}
-     
       {/* <Categories /> */}
       {/* <div className="flex w-full mb-20 flex-wrap my-4">
         <h1 className="sm:text-3xl text-2xl font-medium title-font text-gray-900 lg:w-1/3 lg:mb-0 mb-4">
@@ -434,7 +424,6 @@ const Home = () => {
           heard of them man bun deep jianbing selfies heirloom.
         </p>
       </div> */}
-
       <Tittle
         name="Piles Care"
         head="

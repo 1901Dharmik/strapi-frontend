@@ -24,7 +24,9 @@ import Knowledge from "./Components/Knowledge-Center/Knowledge";
 import Shop from "./pages/Shop";
 import ShuffleHero from "./pages/ShuffleHero";
 // import DarkMode from "./Components/DarkMode";
-
+import SelectionMenu from "./pages/SelectionMenu"
+import Cancel from "./pages/Cancel";
+import Success from "./pages/Success";
 
 
 
@@ -55,6 +57,9 @@ function App() {
           <Route path="knowledge" element={<Knowledge />} />
           <Route path="shop" element={<Shop />} />
           <Route path="shufflehero" element={<ShuffleHero/>}/>
+          <Route path="SelectionMenu" element={<SelectionMenu/>}/>
+          <Route path="cancel" element={<Cancel />} />
+          <Route path="success" element={<Success />} />
          
         
         

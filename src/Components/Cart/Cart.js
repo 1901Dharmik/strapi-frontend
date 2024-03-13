@@ -12,13 +12,13 @@ import { BsCartX } from "react-icons/bs";
 import Lottie, { LottieRefCurrentProps } from "lottie-react";
 import { Link } from "react-router-dom";
 import { useRef } from "react";
-import animationData from "../../assets/amimi.json";
+import animationData from "../../assets/animation.json";
 import { useDispatch } from "react-redux";
 import { makeRequest } from "../../makeRequest";
 import { loadStripe } from "@stripe/stripe-js";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
-const Cart = ({setshowCart}) => {
+const Cart = ({ setshowCart }) => {
   const [quantity, setQuantity] = useState(1);
   const [opacity, setOpacity] = useState(0);
   const products = useSelector((state) => state.cart.products);
@@ -59,8 +59,7 @@ const Cart = ({setshowCart}) => {
     }
   };
   return (
-    <div className="cart-panel z-10 fixed top-0 right-0 bottom-0  bg-white overflow-scroll "
-   >
+    <div className="cart-panel z-10 fixed top-0 right-0 bottom-0  bg-white overflow-scroll ">
       <div className="opac-layer h-full bg-white fadeanimation">
         <div className="cart-content sm:w-full ">
           <div className="cart-header bg-white flex">
@@ -85,11 +84,10 @@ const Cart = ({setshowCart}) => {
                   d="M6 18L18 6M6 6l12 12"
                 />
               </svg>
-             <span className="mt-1 font-medium tex-md">Close </span> 
+              <span className="mt-1 font-medium tex-md">Close </span>
             </div>
-            
           </div>
-          <hr/>
+          <hr />
           {!products.length && (
             <>
               <div className="empty-cart pt-[60px] ">
@@ -106,14 +104,12 @@ const Cart = ({setshowCart}) => {
                   animationData={animationData}
                 />
                 <span>No products in the cart.</span>
-                <button className="return-cta" 
-                onClick={() => {setshowCart(false)
-                  navigate("/")
-                }
-                  
-                
-                }
-                
+                <button
+                  className=" p-2.5  border-2 text-white rounded-xl bg-green-700 hover:bg-green-800"
+                  onClick={() => {
+                    setshowCart(false);
+                    navigate("/");
+                  }}
                 >
                   RETURN TO SHOP
                 </button>
@@ -123,64 +119,68 @@ const Cart = ({setshowCart}) => {
           {!!products.length && (
             <>
               <div className="flex  flex-col  bg-white shadow-xl">
-         {products.map((item) => (
-          <li key={item.id} class="flex py-6 p-4 border-b overflow-hidden ">
-            <div class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-              {/* <link to=""> */}
-              <img
-                 src={item.img}
-                alt="Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch."
-                class="h-full w-full object-cover object-center"
-              />
-              {/* </link> */}
-             
-            </div>
+                {products.map((item) => (
+                  <li
+                    key={item.id}
+                    class="flex py-6 p-4 border-b overflow-hidden "
+                  >
+                    <div class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
+                      {/* <link to=""> */}
+                      <img
+                        src={item.img}
+                        alt="Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch."
+                        class="h-full w-full object-cover object-center"
+                      />
+                      {/* </link> */}
+                    </div>
 
-            <div class="ml-4 flex flex-1 flex-col">
-              <div>
-                <div class="flex justify-between text-base font-medium text-gray-900">
-                  <h3>
-                    <a href="#">{item.title}</a>
-                  </h3>
-                  <p class="ml-4">
-                    &#8377;{item.price * item.quantity}
-                  </p>
-                </div>
-                {/* <p class="mt-0 text-sm text-gray-500">{item.attributes.desc}</p> */}
-                <p class="mt-0 text-sm text-gray-500">Lorem ipsum dolor sit amet .</p>
-              </div>
-              <div class="flex flex-1 items-end justify-between text-sm">
-                <p class="text-gray-500">Qty {item.quantity}</p>
-                <div className="quantity-button">
-                  <span
-                    className="px-2 "
-                    onClick={() => dispatch(decreaseQuantity(item))}
-                  >
-                    -
-                  </span>
-                  <span>{item.quantity}</span>
-                  <span
-                    className="px-2"
-                    onClick={() => dispatch(increaseQuantity(item))}
-                  >
-                    +
-                  </span>
-                </div>
+                    <div class="ml-4 flex flex-1 flex-col">
+                      <div>
+                        <div class="flex justify-between text-base font-medium text-gray-900">
+                          <h3>
+                            <a href="#">{item.title}</a>
+                          </h3>
+                          <p class="ml-4">
+                            &#8377;{item.price * item.quantity}
+                          </p>
+                        </div>
+                        {/* <p class="mt-0 text-sm text-gray-500">{item.attributes.desc}</p> */}
+                        <p class="mt-0 text-sm text-gray-500">
+                          Lorem ipsum dolor sit amet .
+                        </p>
+                      </div>
+                      <div class="flex flex-1 items-end justify-between text-sm">
+                        <p class="text-gray-500">Qty {item.quantity}</p>
+                        <div className="quantity-button">
+                          <span
+                            className="px-2 "
+                            onClick={() => dispatch(decreaseQuantity(item))}
+                          >
+                            -
+                          </span>
+                          <span>{item.quantity}</span>
+                          <span
+                            className="px-2"
+                            onClick={() => dispatch(increaseQuantity(item))}
+                          >
+                            +
+                          </span>
+                        </div>
 
-                <div class="flex">
-                  <button
-                     onClick={() => dispatch(removeItem(item.id))}
-                    type="button"
-                    class="font-medium text-[#206c43] hover:text-green-500"
-                  >
-                    Remove
-                  </button>
-                </div>
+                        <div class="flex">
+                          <button
+                            onClick={() => dispatch(removeItem(item.id))}
+                            type="button"
+                            class="font-medium text-[#206c43] hover:text-green-500"
+                          >
+                            Remove
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                ))}
               </div>
-            </div>
-          </li>
-        ))}
-      </div>
 
               <div class="border-t border-gray-200 px-4 py-6 sm:px-6 bg-white bottom-0">
                 <div class="flex justify-between text-base font-medium text-gray-900">
@@ -191,9 +191,8 @@ const Cart = ({setshowCart}) => {
                   Shipping and taxes calculated at checkout.
                 </p>
                 <div class="mt-6 mx-3">
-                  <div   
-                  onClick={handlePayment}
-                    
+                  <div
+                    onClick={handlePayment}
                     class="flex items-center justify-center rounded-md border border-transparent bg-[#206c43] px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-green-700"
                   >
                     Proceed to Checkout
@@ -202,11 +201,11 @@ const Cart = ({setshowCart}) => {
                 <div class="mt-6 flex flex-col justify-center text-center text-sm text-gray-500">
                   <p>
                     or
-                    <button 
+                    <button
                       type="button"
                       class="font-medium text-[#206c43] hover:text-gray-500"
                     >
-                      <Link to='/shop'>Continue Shopping</Link>
+                      <Link to="/shop">Continue Shopping</Link>
                       <span aria-hidden="true"> &rarr;</span>
                     </button>
                   </p>

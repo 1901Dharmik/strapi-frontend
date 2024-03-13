@@ -82,9 +82,21 @@ const FeaturedProducts = ({ type }) => {
         >
           {
           error
-            ? "Something went wrong!"
+            ? <div class="containerloader">
+            <div class="loader3"></div>
+            <div class="loader3"></div>
+            <div class="loader3"></div>
+            <div class="loader3"></div>
+            <div class="loader3"></div>
+          </div>
             : loading
-            ? "loading"
+            ? <div class="containerloader">
+            <div class="loader3"></div>
+            <div class="loader3"></div>
+            <div class="loader3"></div>
+            <div class="loader3"></div>
+            <div class="loader3"></div>
+          </div>
             :
              data?.map((item) => (
                 <SwiperSlide>

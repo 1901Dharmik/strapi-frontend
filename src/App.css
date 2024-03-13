@@ -1128,3 +1128,400 @@ margin-left: 0px !important;
       transform: translateY(0);
   }
 }
+.box-shadow{
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+}
+
+/* footer */
+.main-content .shopify-section {
+  display: inherit;
+}
+
+.footer-top-banner {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.theme-green-bg-color {
+  background-color: #206c43 !important;
+}
+
+.footer-top-banner h3 {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 23px;
+  padding-bottom: 20px;
+}
+
+.footer-top-banner p {
+  color: #ffffff;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+
+.btn-group,
+.btn-group-vertical {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+.footer-top-banner a {
+  color: #ffffff !important;
+  font-size: 15px;
+  font-weight: 600;
+  margin: 5px 12px;
+  padding: 10px 12px;
+  border: 1px solid #ffffff4d;
+  border-radius: 2px;
+}
+
+.footer-top-banner a img {
+  height: 20px;
+  width: auto;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.rowd {
+  display: flex;
+  flex-wrap: wrap;
+}
+/* selectionmenu.css */
+.mob-hide {
+  width: 100%;
+}
+
+.drop-with-tab-section {
+  background: #f8f8f8;
+}
+
+.container-main {
+
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.drop-with-tab {
+  /* border: 1px solid blue;
+  width: 100%; */
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.left-dropdown-part {
+  /* background: pink; */
+  padding: 20px;
+  width: 22%;
+  position: relative;
+}
+
+.mydropdown {
+  width: 100%;
+  padding: 15px;
+  /* background: #24A470; */
+  color: #000000;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+select,
+.disclosure__toggle {
+
+
+  font-weight: 600;
+  background-position: right center;
+  background-image: var(--svg-select-icon);
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  line-height: 1.2;
+  padding-right: 28px;
+  text-indent: 0.01px;
+  text-overflow: '';
+  cursor: pointer;
+  padding-top: 8px;
+  padding-left: 15px;
+  padding-bottom: 8px;
+}
+
+/* .left-dropdown-part::after {
+  content: '';
+  background-image: url(../public/images/down.png);
+  height: 14px;
+  width: 14px;
+  top: 33px;
+  right: 46px;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
+
+
+
+select,
+.disclosure__toggle {
+  border: 1px solid #cccccc;
+  background-color: var(--color-text-field);
+  color: var(--color-text-field-text);
+  max-width: 100%;
+  line-height: 1.2;
+  border-radius: 8px;
+}
+
+.right-tab-list-part {
+  /* background: yellow; */
+  padding: 20px;
+  width: 78%;
+}
+
+.right-tab-list-part span {
+  padding: 0 50px;
+  color: #000000 !important;
+}
+
+.right-tab-list-part span a {
+  color: #000000;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.left-dropdown-part .mydropdown option {
+  background: #ffffff;
+  color: #000000;
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 749px) {
+  .drop-with-tab {
+    display: block;
+  }
+
+  .left-dropdown-part {
+    width: 100%;
+    padding: 20px 0 10px 0;
+  }
+
+  .mydropdown {
+    padding: 12px 15px;
+    border-radius: 6px;
+    font-size: 15px;
+    width: 100%;
+  }
+
+  .right-tab-list-part {
+    width: 100%;
+    padding: 0px 0 20px 0;
+    text-align: center;
+  }
+
+  .right-tab-list-part span {
+    padding: 0 4px;
+  }
+
+  .right-tab-list-part span a {
+    font-size: 14px;
+    margin-bottom: 10px;
+    border: 1px solid #e5e5e5;
+    line-height: 50px;
+    padding: 10px 20px;
+    border-radius: 50px;
+  }
+}
+
+.right-tab-list-part.active a {
+  color: #16be07;
+}
+
+span a::before {
+
+  color: #000000;
+
+}
+
+span a::after {
+  color: #16be07;
+}
+
+/* .right-tab-list-part span a:active{
+  color: #008000;
+  border-bottom: 1px solid black;
+} */
+/* knowledge stomach gas banner */
+
+@media (min-width: 1200px) {
+
+  .containerold {
+    max-width: 1325px !important;
+  }
+}
+
+section-padding-bottom-30 {
+  padding-bottom: 30px;
+}
+
+.section-padding-top {
+  padding-top: 70px;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.pad-right-10per {
+  padding-right: 10%;
+}
+
+.m-auto {
+  margin: auto !important;
+}
+
+
+
+.knowledge-heading {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  text-transform: inherit;
+  letter-spacing: 0em;
+  margin-bottom: 12px !important;
+}
+
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  margin: 0 0 12.5px;
+
+  font-weight: var(--font-weight-header);
+  line-height: 1.2;
+
+  word-wrap: break-word;
+}
+
+.knowledge-hr {
+  border-radius: 15px;
+  width: 40px;
+  height: 4px;
+  left: 0;
+  display: inline-flex;
+  margin: 6px 0;
+}
+
+.digestive-kit-bg-color {
+  background-color: #206c43 !important;
+}
+
+.mt-15 {
+  font-family: 'Rubik', sans-serif;
+
+
+  font-size: 15px;
+  font-weight: 100;
+  color: #6c6c6c;
+  margin: 0 0 19.44444px;
+  margin-top: 15px;
+}
+
+@media (min-width: 768px) {
+  .col-md-6 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+.col-md-6 {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.guj{
+  font-family: "Noto Sans Gujarati", sans-serif !important;
+  font-optical-sizing: auto;
+  font-size: 23px;
+  margin: 10px;
+  font-style: normal;
+}
+ /* loader.css */
+ .containerloader {
+  /* width: 200px;
+  height: 200px; */
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.loader3 {
+  width: 20px;
+  height: 40px;
+  border-radius: 10px 50px;
+  box-shadow: 0px 0px 5px black;
+  animation: dominos 1s ease infinite;
+}
+
+.loader3:nth-child(1) {
+  --left: 80px;
+  animation-delay: 0.325s;
+  background-color: #5d9960;
+}
+
+.loader3:nth-child(2) {
+  --left: 70px;
+  animation-delay: 0.5s;
+  background-color: #82a587;
+}
+
+.loader3:nth-child(3) {
+  left: 60px;
+  animation-delay: 0.625s;
+  background-color: #8bac74;
+}
+
+.loader3:nth-child(4) {
+  animation-delay: 0.74s;
+  left: 50px;
+  background-color: #b9bf90;
+}
+
+.loader3:nth-child(5) {
+  animation-delay: 0.865s;
+  left: 40px;
+  background-color: #e7d2ab;
+}
+
+@keyframes dominos {
+  50% {
+    opacity: 0.7;
+  }
+
+  75% {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+
+  80% {
+    opacity: 1;
+  }
+}

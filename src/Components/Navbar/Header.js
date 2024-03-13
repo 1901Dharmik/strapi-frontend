@@ -849,7 +849,7 @@ export default function Header() {
                     <h1 className="text-xl text-[#111]">Online Gadget Store</h1> */}
                       <img
                         // className="h-[60px] w-auto"
-                        className="h-[35px] w-full"
+                        className="xl:h-[35px] sm:h-[25px] w-full"
                         src="./images/medicy.png"
                         alt=""
                         draggable="false"
@@ -1411,7 +1411,7 @@ export default function Header() {
                         <div
                           onClick={() => setshowCart(true)}
                           // onClick={() => setShow(!show)}
-                          className="group -m-2 flex items-center p-2 hover:border hover:rounded-md hover:bg-[rgba(40,167,69,.0784)] mr-2"
+                          className="group  flex items-center p-2 hover:border hover:rounded-md hover:bg-[rgba(40,167,69,.0784)] "
                         >
                           <ShoppingBagIcon
                             className="h-6 w-6 flex-shrink-0 text-gray-600 group-hover:text-[#206c43]"

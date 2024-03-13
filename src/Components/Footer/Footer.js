@@ -32,37 +32,41 @@ const Footer = () => {
 
                 </div>
             </div> */}
-      {/* <div id="shopify-section-1627017499c9c1e06d" class="shopify-section">
+      <div class="shopify-section">
+        <div class="rowd footer-top-banner theme-green-bg-color">
+          <div class="container">
+            <h3>Free Expert Phone Consultation</h3>
+            <p>
+              Get to know more about your health problem with easy simple
+              assessment. Let’s find out.
+            </p>
+            <div class="btn-group">
+              <a href="tel:8112612345" aria-describedby="a11y-external-message">
+                <img src="https://cdn.shopify.com/s/files/1/0575/8920/3125/files/phone.png?v=1625655959" />
+                CALL
+              </a>
+              <a
+                href="https://wa.me/918112612345"
+                aria-describedby="a11y-external-message"
+              >
+                <img src="https://cdn.shopify.com/s/files/1/0575/8920/3125/files/whatsapp.png?v=1639555747" />
+                WHATSAPP
+              </a>
+              <a
+                href="https://m.me/vigyanveda"
+                target="_blank"
+                aria-describedby="a11y-new-window-external-message"
+                rel="null noopener"
+              >
+                <img src="https://cdn.shopify.com/s/files/1/0575/8920/3125/files/chat.png?v=1625655959" />
+                CHAT
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
 
-
-
-
-                <div class="rowd footer-top-banner theme-green-bg-color">
-                    <div class="container">
-                        <h3>Free Expert Phone Consultation</h3>
-                        <p>Get to know more about your health problem with easy simple assessment. Let’s find out.</p>
-                        <div class="btn-group">
-                            <a href="tel:8112612345" aria-describedby="a11y-external-message"><img src="https://cdn.shopify.com/s/files/1/0575/8920/3125/files/phone.png?v=1625655959" />CALL</a>
-                            <a href="https://wa.me/918112612345" aria-describedby="a11y-external-message"><img src="https://cdn.shopify.com/s/files/1/0575/8920/3125/files/whatsapp.png?v=1639555747" />WHATSAPP</a>
-                            <a href="https://m.me/vigyanveda" target="_blank" aria-describedby="a11y-new-window-external-message" rel="null noopener"><img src="https://cdn.shopify.com/s/files/1/0575/8920/3125/files/chat.png?v=1625655959" />CHAT</a>
-                            
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-
-
-
-
-
-
-
-            </div> */}
-
-      <footer className="site-footer critical-hidden" id="footer">
+      <footer className="site-footer critical-hidden" >
         <div className="page-width">
           <div className="site-footer__content foo-bor-b">
             <div
@@ -262,7 +266,7 @@ const Footer = () => {
             </div>
           </div>
         </div> */}
-            {/* <div class="text-sm mb-8 text-gray-500 sm:text-center dark:text-gray-400">© 2021-2022 <a href="#" class="hover:underline">Flowbite™</a>. All Rights Reserved.</div> */}
+        {/* <div class="text-sm mb-8 text-gray-500 sm:text-center dark:text-gray-400">© 2021-2022 <a href="#" class="hover:underline">Flowbite™</a>. All Rights Reserved.</div> */}
         {/*  */}
 
         <div class="sec-footer ">
