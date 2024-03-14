@@ -27,6 +27,10 @@ import ShuffleHero from "./pages/ShuffleHero";
 import SelectionMenu from "./pages/SelectionMenu"
 import Cancel from "./pages/Cancel";
 import Success from "./pages/Success";
+import ContentPage from "./pages/ContentPage";
+
+
+
 
 
 
@@ -60,6 +64,8 @@ function App() {
           <Route path="SelectionMenu" element={<SelectionMenu/>}/>
           <Route path="cancel" element={<Cancel />} />
           <Route path="success" element={<Success />} />
+          <Route path="contentpage" element={<ContentPage/>}/>
+        
          
         
         

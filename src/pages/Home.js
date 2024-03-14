@@ -5,7 +5,7 @@ import Categories from "../Components/Categories/Categories";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Card from "../Components/Card/Card";
 import Tittle from "../Components/Head/Tittle";
-
+import "./home.css";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -350,13 +350,25 @@ const Home = () => {
         </div>
       </section> */}
       {/* <SubCategory/> */}
-     
       <Tittle
         name="Select By Category"
         head="improve your digestive health and prevent health problems"
         style={{ padding: "30px" }}
       />
       <Dcategory />
+      <Tittle
+        name="Select By Care"
+        head="improve your digestive health and prevent health problems"
+        style={{ padding: "30px" }}
+      />
+      <div className="grid lg:grid-cols-2 sm:grid-cols-1 py-6 mx-6 gap-4 ">
+        <img src="/images/dd1.jpg" alt="" className="rounded-xl shadow-md" />
+
+        <img src="/images/dd2.jpg" alt="" className="rounded-xl shadow-md" />
+        {/* <img src="/images/dd3.jpg" alt="" className="rounded-xl shadow-md" />
+
+<img src="/images/dd4.jpg" alt="" className="rounded-xl shadow-md" /> */}
+      </div>
       <Tittle
         name="Nutrition Care"
         head="
@@ -432,45 +444,50 @@ const Home = () => {
         style={{ padding: "30px" }}
       />
       <FeaturedProducts type="Piles Care" />
-      {/* <section
-        className="bg-[#d5eadb]  m-5  flex items-center justify-between box-shadows2"
-        style={{ borderRadius: "12px" }}
-      >
-        <div className="flex items-center">
-          <img
-            alt="Doctor"
-            className="pl-4"
-            src="https://cdn.shopify.com/s/files/1/0575/8920/3125/files/Digestive-Care.png?v=1629541512"
-            style={{
-              aspectRatio: "400/400",
-              height: "300px",
-              objectFit: "contain",
-              width: "600px",
-            }}
-             draggable="false"
-          />
-          <div className="ml-4 text-center">
-            <h2 className=" font-semibold text-3xl text-[#206c43]  pb-4">
+      <Tittle
+        name="Select By Care"
+        head="improve your digestive health and prevent health problems"
+        style={{ padding: "30px" }}
+      />
+      <div className="grid lg:grid-cols-2 sm:grid-cols-1 py-6 mx-6 gap-4 ">
+        {/* <img src="/images/dd1.jpg" alt="" className="rounded-xl shadow-md" />
+        <img src="/images/dd2.jpg" alt="" className="rounded-xl shadow-md" /> */}
+        <img src="/images/dd3.jpg" alt="" className="rounded-xl shadow-md" />
+
+        <img src="/images/dd4.jpg" alt="" className="rounded-xl shadow-md" />
+      </div>
+
+      <div class="m-10 mx-4 overflow-hidden rounded-xl   shadow-lg ">
+        <div class="flex flex-col  overflow-hidden  bg-[#d5eadb] sm:flex-row md:h-80">
+          <div class="order-first ml-auto h-48 w-full bg-[#d5eadb] sm:order-none sm:h-auto sm:w-full lg:w-2/5">
+            <img
+              class="h-full w-full object-contain xl:px-2 xl:mt-2 "
+              src="https://cdn.shopify.com/s/files/1/0575/8920/3125/files/Digestive-Care.png?v=1629541512"
+              loading="lazy"
+            />
+          </div>
+          <div class="text-center flex w-full flex-col p-4 sm:w-1/2 sm:p-8 lg:w-3/5 lg:mt-6">
+          <h1 className=" font-semibold text-2xl  text-[#206c43] mt-4 pb-4">
               Expert Consultation For Digestive Care
-            </h2>
+            </h1>
             <p className="mt-1  font-light pb-12 mx-8  ">
               Get the best customised ayurvedic care for Digestive problems on
               the Phone from our Experts at your comfort
             </p>
-            <div class="flex space-x-4 ml-[220px]">
-              <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 bg-[#206c43] text-white">
+            <div class="flex space-x-4 lg:ml-[220px] mb-2">
+              <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 bg-[#206c43] text-white shadow-md">
                 Contact Us
               </button>
-              <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 bg-[#318e5c] text-white">
+              <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 bg-[#318e5c] text-white shadow-md">
                 Call Now
               </button>
-              <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 bg-[#206c43] text-white">
+              <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 bg-[#206c43] text-white shadow-md">
                 Whatsapp
               </button>
             </div>
           </div>
         </div>
-      </section> */}
+      </div>
     </div>
   );
 };

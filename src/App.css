@@ -795,7 +795,7 @@ ul li {
   }
 }
 
-slider {
+.slider {
   transform: translate3d(-1600px, 0px, 0px);
   transition: all 0.25s ease 0s;
   scroll-behavior: smooth;
@@ -881,6 +881,7 @@ slider {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   z-index: 2;
   animation: fadeIn 0.2s ease-in-out;
+  
 }
 
 
@@ -888,7 +889,11 @@ slider {
   list-style-type: none;
   display: grid;
   width: 100%;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: auto auto ;
+  max-height: 400px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
 }
 
 .list-items-with-description li {
@@ -897,9 +902,14 @@ slider {
   /* gap: 16px; */
   width: 100%;
 }
-.dropdown__wrapper li{
+/* .dropdown__wrapper li{
  
   margin-right: 55px;
+
+} */
+.dropdown__wrapper li{
+ width: 350px;
+  /* margin-right: 75px; */
 
 }
 .dropdown__wrapper li img{

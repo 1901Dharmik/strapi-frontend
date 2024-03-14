@@ -14,7 +14,7 @@ const Dcategory = () => {
             <article
               key={item.id}
               onClick={() => navigate(`/category/${item.id}`)}
-              class="relative p-4 w-full  rounded-lg overflow-hidden shadow-md flex flex-col justify-center items-center bg-gray-100"
+              class="relative p-4 w-full  rounded-lg overflow-hidden shadow-md flex flex-col justify-center items-center bg-[#e6ffe6]"
             >
               <div class="aspect-square overflow-hidden w-20 h-20 rounded-lg">
                 <img
@@ -39,7 +39,7 @@ const Dcategory = () => {
                       <span class="absolute" aria-hidden="true"></span>
                     </a>
                   </h3>
-                  <a title="" class="cursor-pointer">
+                  <a title="" class="cursor-pointer ">
                     {item?.attributes?.desc}
                     <span class="absolute" aria-hidden="true"></span>
                   </a>

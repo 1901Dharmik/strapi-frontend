@@ -28,6 +28,7 @@ import {
 } from "@heroicons/react/24/outline";
 import { MinusIcon, PlusIcon } from "@heroicons/react/20/solid";
 import { ShiftingDropDown } from "../ShiftingDropDown";
+import useFetch from "../../hooks/useFetch";
 
 const filters = [
   {
@@ -241,7 +242,8 @@ export default function Header() {
   const { jwt } = userData();
   const isLoggedIn = !!jwt;
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
+  const { data, loading, error } = useFetch(`/products?populate=*`);
+  console.log("my data", data);
   const [open, setOpen] = useState(false);
   const products = useSelector((state) => state.cart.products);
 
@@ -413,30 +415,39 @@ export default function Header() {
                                           Icerose Powder
                                         </label> */}
                                           <div className="flex flex-row gap-4 mb-12 overflow-x-auto">
-                                            {category.featured.map((item) => (
+                                            {data?.map((item) => (
                                               <div
                                                 key={item.name}
                                                 className="group relative text-sm"
                                               >
-                                                <div className="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
-                                                  <img
-                                                    src={item.imageSrc}
-                                                    alt={item.imageAlt}
-                                                    className="object-cover object-center "
-                                                  />
-                                                </div>
-
-                                                <NavLink
-                                                  onClick={() => setOpen(false)}
-                                                  to={item.NavLink}
-                                                  className=" mt-2 mx-8 block font-medium text-gray-900 "
+                                                <Link onClick={() => setOpen(false)}
+                                                  to={`/product/${item.id}`}
                                                 >
-                                                  <span
-                                                    className="absolute inset-0 z-10"
-                                                    aria-hidden="true"
-                                                  />
-                                                  {item.name}
-                                                </NavLink>
+                                                  <div className="overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75 h-32 w-32">
+                                                    <img
+                                                      src={
+                                                        item.attributes.img.data
+                                                          .attributes.url
+                                                      }
+                                                      alt={item.imageAlt}
+                                                      className="object-fill object-center "
+                                                    />
+                                                  </div>
+
+                                                  <NavLink
+                                                    onClick={() =>
+                                                      setOpen(false)
+                                                    }
+                                                    to={`/product/${item.id}`}
+                                                    className=" mt-2 mx-8 block font-medium text-gray-900 "
+                                                  >
+                                                    <span
+                                                      className="absolute inset-0 z-10"
+                                                      aria-hidden="true"
+                                                    />
+                                                    {item?.attributes?.title}
+                                                  </NavLink>
+                                                </Link>
                                               </div>
                                             ))}
                                           </div>
@@ -484,62 +495,72 @@ export default function Header() {
                                       leaveTo="opacity-0"
                                     >
                                       <Transition.Root>
+                                        
                                         <Disclosure.Panel className="pt-6">
+                                          <Link to="/category/1" onClick={() => setOpen(false)}>
                                           <div className="space-y-8 flex">
                                             <div className="flex items-center">
-                                              <img
+                                              {/* <img
                                                 src="./images/stomach-problem.png"
                                                 className="h-12 w-12"
                                                 alt=""
-                                              />
+                                              /> */}
                                               <div className="ml-2 min-w-0 flex-1 text-lg text-gray-500">
-                                                Digestive Care
+                                             Digestive Care
                                               </div>
                                             </div>
                                           </div>
+                                          </Link>
                                         </Disclosure.Panel>
+                                       
 
                                         <Disclosure.Panel className="pt-6">
+                                        <Link to="/category/2" onClick={() => setOpen(false)}>
                                           <div className="space-y-8">
                                             <div className="flex items-center">
-                                              <img
+                                              {/* <img
                                                 src="./images/fistula.png"
                                                 className="h-12 w-12"
                                                 alt=""
-                                              />
+                                              /> */}
                                               <div className="ml-2 min-w-0 flex-1 text-lg text-gray-500">
-                                                Piles Care
+                                              Piles Care
                                               </div>
                                             </div>
                                           </div>
+                                          </Link>
                                         </Disclosure.Panel>
                                         <Disclosure.Panel className="pt-6">
+                                        <Link to="/category/4" onClick={() => setOpen(false)}>
                                           <div className="space-y-8">
                                             <div className="flex items-center">
-                                              <img
+                                              {/* <img
                                                 src="./images/weight_loss.png"
                                                 className="h-12 w-12"
                                                 alt=""
-                                              />
+                                              /> */}
                                               <div className="ml-2 min-w-0 flex-1 text-lg text-gray-500">
-                                                Weight Care
+                                              Immunity Care
                                               </div>
                                             </div>
                                           </div>
+                                          </Link>
                                         </Disclosure.Panel>
                                         <Disclosure.Panel className="pt-6">
+                                        <Link to="/category/5" onClick={() => setOpen(false)}>
                                           <div className="space-y-8">
                                             <div className="flex items-center">
-                                              <img
+                                              {/* <img
                                                 src="/images/immune_system.png"
                                                 className="h-12 w-12"
                                                 alt=""
-                                              />
+                                              /> */}
                                               <div className="ml-2 min-w-0 flex-1 text-lg text-gray-500">
-                                                Immunity Care
+                                              Nutrition Care
                                               </div>
                                             </div>
                                           </div>
+                                          </Link>
                                         </Disclosure.Panel>
                                       </Transition.Root>
                                     </Transition>
@@ -819,12 +840,9 @@ export default function Header() {
 
         <div>
           <header className="relative  ">
-
             <p className="flex h-10 items-center justify-center bg-[#206c43] px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
               Welcome To Medisy
-              <span>
-              {/* <DarkMode/> */}
-              </span>
+              <span>{/* <DarkMode/> */}</span>
             </p>
 
             <nav
@@ -880,7 +898,7 @@ export default function Header() {
 
                   <nav className="display lg:block md:hidden">
                     <div className="navigation hide ">
-                      <li>
+                      {/* <li>
                         <button className="btns text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-300">
                           Features
                           <svg
@@ -896,17 +914,23 @@ export default function Header() {
                         <div class="dropdown__wrapper">
                           <div class="dropdown ">
                             <div class="list-items-with-description ">
-                              <li>
+                            {data?.map((item) => (
+                              <li className="max-w-22">
                                 <img
-                                  src="./images/gas.png"
+                                  src={
+                                    item.attributes.img.data.attributes
+                                      .url
+                                  }
                                   className="h-10 w-10"
                                   alt=""
                                 />
-                                <div class="item-title">
-                                  <h3>Previews</h3>
-                                  <p>Zero config, more innovation</p>
+                                <div class="item-title ">
+                                  <h3>{item?.attributes?.title}</h3>
+                                  <p>{item?.attributes?.desc}</p>
                                 </div>
                               </li>
+                         ))}
+
                               <li>
                                 <img
                                   src="./images/gas.png"
@@ -965,10 +989,10 @@ export default function Header() {
                             </div>
                           </div>
                         </div>
-                      </li>
+                      </li> */}
                       <li>
                         <button className="btns text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-300">
-                          Features
+                         Products
                           <svg
                             aria-hidden="true"
                             height="16"
@@ -982,18 +1006,29 @@ export default function Header() {
                         <div class="dropdown__wrapper ">
                           <div class="dropdown ">
                             <div class="list-items-with-description ">
-                              <li>
+                            {data?.map((item) => (
+                             
+                              <li className="">
+                                 <Link  to={`/product/${item.id}`}>
+                                  
                                 <img
-                                  src="./images/gas.png"
-                                  className="h-10 w-10"
+                                  src={
+                                    item.attributes.img.data.attributes
+                                      .url
+                                  }
+                                  className="h-10 w-10 rounded-md"
                                   alt=""
                                 />
+                               </Link>
                                 <div class="item-title">
-                                  <h3>Previews</h3>
-                                  <p>Zero config, more innovation</p>
+                                  <h3>{item.attributes.title}</h3>
+                                  <p>{item.attributes.desc}</p>
                                 </div>
+                                
                               </li>
-                              <li>
+                            
+                         ))}
+                              {/* <li>
                                 <img
                                   src="./images/gas.png"
                                   className="h-10 w-10"
@@ -1047,13 +1082,13 @@ export default function Header() {
                                   <h3>Storage</h3>
                                   <p>Serverless storage for frontend</p>
                                 </div>
-                              </li>
+                              </li> */}
                             </div>
-                            <div className="border-t border-gray-200 mx-4 mt-3">
+                            {/* <div className="border-t border-gray-200 mx-4 mt-3">
                               <div className="flex justify-center align-middle items-center my-3 bg-green-800 text-white text-md mx-48 p-2 border-2 border-gray-200 rounded-3xl hover:shadow-md">
                                 View All
                               </div>
-                            </div>
+                            </div> */}
                           </div>
                         </div>
                       </li>
@@ -1264,12 +1299,12 @@ export default function Header() {
                       >
                         {/* <div>
                           <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-md text-gray-700 hover:bg-gray-50"> */}
-                            {/* <img
+                        {/* <img
                         src="https://tailwindui.com/img/flags/flag-canada.svg"
                         alt=""
                         className="block h-auto w-5 flex-shrink-0"
                       /> */}
-                            {/* <svg
+                        {/* <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
                             viewBox="0 0 24 24"
@@ -1284,14 +1319,14 @@ export default function Header() {
                             />
                           </svg> */}
 
-                            {/* <span className="ml-3 block text-sm font-medium">
+                        {/* <span className="ml-3 block text-sm font-medium">
                             Quick Links
                           </span>
                           <ChevronDownIcon
                             className="mr-1 mt-[1px] h-5 w-5 text-gray-600"
                             aria-hidden="true"
                           /> */}
-                          {/* </Menu.Button>
+                        {/* </Menu.Button>
                         </div> */}
 
                         <Transition

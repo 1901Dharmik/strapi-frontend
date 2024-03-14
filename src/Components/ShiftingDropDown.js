@@ -240,11 +240,11 @@ const Pricing = () => {
 const Blog = () => {
   return (
     <div>
-      <div className="grid grid-cols-2 gap-2">
+      <div className="grid grid-cols-2 gap-2 pb-2">
         <a href="#">
           <img
-            className="mb-2 h-14 w-full rounded object-cover"
-            src="/imgs/blog/4.png"
+            className="mb-2 h-24 w-full rounded object-cover"
+            src="/images/pileskit.jpg"
             alt="Placeholder image"
           />
           <h4 className="mb-0.5 text-sm font-medium">Lorem ipsum dolor</h4>
@@ -253,10 +253,38 @@ const Blog = () => {
             quidem eos.
           </p>
         </a>
+        
         <a href="#">
           <img
-            className="mb-2 h-14 w-full rounded object-cover"
-            src="/imgs/blog/5.png"
+            className="mb-2 h-24 w-full rounded object-cover"
+            src="/images/dig2.jpg"
+            alt="Placeholder image"
+          />
+          <h4 className="mb-0.5 text-sm font-medium">Lorem ipsum dolor</h4>
+          <p className="text-xs text-gray-400">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet illo
+            quidem eos.
+          </p>
+        </a>
+      </div>
+      <div className="grid grid-cols-2 gap-2">
+        <a href="#">
+          <img
+            className="mb-2 h-24 w-full rounded object-cover"
+            src="/images/pileskit.jpg"
+            alt="Placeholder image"
+          />
+          <h4 className="mb-0.5 text-sm font-medium">Lorem ipsum dolor</h4>
+          <p className="text-xs text-gray-400">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet illo
+            quidem eos.
+          </p>
+        </a>
+        
+        <a href="#">
+          <img
+            className="mb-2 h-24 w-full rounded object-cover"
+            src="/images/dig2.jpg"
             alt="Placeholder image"
           />
           <h4 className="mb-0.5 text-sm font-medium">Lorem ipsum dolor</h4>
