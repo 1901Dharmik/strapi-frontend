@@ -500,11 +500,11 @@ export default function Header() {
                                           <Link to="/category/1" onClick={() => setOpen(false)}>
                                           <div className="space-y-8 flex">
                                             <div className="flex items-center">
-                                              {/* <img
+                                              <img
                                                 src="./images/stomach-problem.png"
                                                 className="h-12 w-12"
                                                 alt=""
-                                              /> */}
+                                              />
                                               <div className="ml-2 min-w-0 flex-1 text-lg text-gray-500">
                                              Digestive Care
                                               </div>
@@ -518,11 +518,11 @@ export default function Header() {
                                         <Link to="/category/2" onClick={() => setOpen(false)}>
                                           <div className="space-y-8">
                                             <div className="flex items-center">
-                                              {/* <img
+                                              <img
                                                 src="./images/fistula.png"
                                                 className="h-12 w-12"
                                                 alt=""
-                                              /> */}
+                                              />
                                               <div className="ml-2 min-w-0 flex-1 text-lg text-gray-500">
                                               Piles Care
                                               </div>
@@ -534,11 +534,11 @@ export default function Header() {
                                         <Link to="/category/4" onClick={() => setOpen(false)}>
                                           <div className="space-y-8">
                                             <div className="flex items-center">
-                                              {/* <img
+                                              <img
                                                 src="./images/weight_loss.png"
                                                 className="h-12 w-12"
                                                 alt=""
-                                              /> */}
+                                              />
                                               <div className="ml-2 min-w-0 flex-1 text-lg text-gray-500">
                                               Immunity Care
                                               </div>
@@ -550,11 +550,11 @@ export default function Header() {
                                         <Link to="/category/5" onClick={() => setOpen(false)}>
                                           <div className="space-y-8">
                                             <div className="flex items-center">
-                                              {/* <img
+                                              <img
                                                 src="/images/immune_system.png"
                                                 className="h-12 w-12"
                                                 alt=""
-                                              /> */}
+                                              />
                                               <div className="ml-2 min-w-0 flex-1 text-lg text-gray-500">
                                               Nutrition Care
                                               </div>
@@ -847,9 +847,9 @@ export default function Header() {
 
             <nav
               aria-label="Top"
-              className="mx-auto w-full px-4 sm:px-6 lg:px-8 "
+              className="mx-auto w-full px-4 sm:px-6 lg:px-8  "
             >
-              <div className="border-b border-gray-200">
+              <div className="border-b border-gray-200 ">
                 <div className="flex h-16 items-center">
                   <button
                     type="button"
