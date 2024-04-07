@@ -53,7 +53,7 @@ const Search = ({ setSearchModal }) => {
           <div className="search-result grid xl:grid-cols-3 gap-4  w-full">
             {data?.map((item) => (
               <div
-                className="search-result-item shadow-md px-2"
+                className="search-result-item "
                 key={item.id}
                 onClick={() => {
                   navigate("/product/" + item.id);

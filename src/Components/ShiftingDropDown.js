@@ -63,7 +63,7 @@ const Tab = ({ children, tab, handleSetSelected, selected }) => {
       onClick={() => handleSetSelected(tab)}
       className={`flex items-center gap-1 rounded-full px-3 py-1.5 text-sm transition-colors ${
         selected === tab
-          ? " bg-[#f4f5f7] text-gray-700"
+          ? " bg-[#EEF8F0] text-gray-700 border-gray-100"
           : "text-neutral-700"
       }`}
     >

@@ -1,6 +1,8 @@
 import { render } from "@testing-library/react";
 import React from "react";
-
+import { Link } from "react-router-dom";
+import { PiChatTeardropTextLight, PiPhoneCallLight } from "react-icons/pi";
+import { FaWhatsapp } from "react-icons/fa";
 import {
   BsFacebook,
   BsInstagram,
@@ -40,33 +42,33 @@ const Footer = () => {
               Get to know more about your health problem with easy simple
               assessment. Let’s find out.
             </p>
-            <div class="btn-group">
-              <a href="tel:8112612345" aria-describedby="a11y-external-message">
-                <img src="https://cdn.shopify.com/s/files/1/0575/8920/3125/files/phone.png?v=1625655959" />
+            <div class="inline-flex">
+              <Link to="tel:918490059352" aria-describedby="a11y-external-message" >
+                <PiPhoneCallLight  />
                 CALL
-              </a>
-              <a
-                href="https://wa.me/918112612345"
+              </Link>
+              <Link
+               to="https://wa.me/918490059352"
                 aria-describedby="a11y-external-message"
               >
-                <img src="https://cdn.shopify.com/s/files/1/0575/8920/3125/files/whatsapp.png?v=1639555747" />
+                <FaWhatsapp />
                 WHATSAPP
-              </a>
-              <a
-                href="https://m.me/vigyanveda"
+              </Link>
+              <Link
+               to="/"
                 target="_blank"
                 aria-describedby="a11y-new-window-external-message"
                 rel="null noopener"
               >
-                <img src="https://cdn.shopify.com/s/files/1/0575/8920/3125/files/chat.png?v=1625655959" />
+                <PiChatTeardropTextLight  />
                 CHAT
-              </a>
+              </Link>
             </div>
           </div>
         </div>
       </div>
 
-      <footer className="site-footer critical-hidden" >
+      <footer className="site-footer critical-hidden">
         <div className="page-width">
           <div className="site-footer__content foo-bor-b">
             <div
@@ -76,7 +78,7 @@ const Footer = () => {
                     "
             >
               <div className="site-footer__item-inner site-footer__item-inner--link_list">
-                <p className="h4">Online Gadget Store</p>
+                <p className="h4">Medisy Store</p>
                 <ul
                   className="site-footer__linklist
                             "
@@ -97,35 +99,36 @@ const Footer = () => {
                     "
             >
               <div className="site-footer__item-inner site-footer__item-inner--link_list">
-                <p className="h4">Top Gadgets</p>
+                <p className="h4">Top products</p>
                 <ul
                   className="site-footer__linklist
                             "
                 >
-                  <li className="site-footer__linklist-item">
-                    <a href="/products">Item 1</a>
+                   <li className="site-footer__linklist-item">
+                  <Link to={"/product/7"}>Digestive Kit </Link>
                   </li>
                   <li className="site-footer__linklist-item">
-                    <a href="/products">Item 2</a>
+                  <Link to={"/product/20"}>Piles Kit</Link>
                   </li>
                   <li className="site-footer__linklist-item">
-                    <a href="/products">Item 1</a>
+                    <Link to={"/product/2"}>Icerose Powder</Link>
                   </li>
                   <li className="site-footer__linklist-item">
-                    <a href="/products">Item 3</a>
+                  <Link to={"/product/9"}>Gesofine Powder</Link>
                   </li>
                   <li className="site-footer__linklist-item">
-                    <a href="/products">Item 4</a>
+                  <Link to={"/product/14"}>Refresh Churna</Link>
                   </li>
                   <li className="site-footer__linklist-item">
-                    <a href="/products">Item 1</a>
+                  <Link to={"/product/3"}>Amrutam Teblets</Link>
                   </li>
                   <li className="site-footer__linklist-item">
-                    <a href="/products">Item 5</a>
+                  <Link to={"/product/12"}>Lexolite Teblets</Link>
                   </li>
                   <li className="site-footer__linklist-item">
-                    <a href="/products">Item 6</a>
+                  <Link to={"/product/5"}>Constirelex Powder</Link>
                   </li>
+                 
                 </ul>
               </div>
             </div>
@@ -171,26 +174,22 @@ const Footer = () => {
               </div>
             </div>
             <div
-              className="site-footer__item
-                    
-                    site-footer__item--one-quarter
-                    "
-            >
+              className="site-footer__item site-footer__item--one-quarter">
               <div className="site-footer__item-inner site-footer__item-inner--text">
                 <p className="h4">Contact Us</p>
                 <div
-                  className="site-footer__rte
-                              "
+                  className="site-footer__rte"
                 >
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Deserunt id iure ullam vel quibusdam aliquid, eligendi.
+                    Our Expert Believe That Every Human soul Can Be Purified By
+                    The Help Of Ayurveda.
                   </p>
-                  <p>Email: onlinegadgetstore@gmail.com</p>
-                  <p>Phone: +91-9099776139</p>
+                  <p>Email: medisy@gmail.com</p>
+                  <p>Phone: +91-8490059352</p>
                   <p>
-                    Address: 302-303 Samedh Complex, near associate petrol pump,
-                    CG Road- Ahmedabad 380009
+                    Address: 702/703, Elight Meghnum, Near:- Solaris Business
+                    Hub, Opp:- Ustav Elegance, Bhuyangdev Cross Road,
+                    Ghatlodiya, Ahmedabad, Gujarat- 390061
                   </p>
                   <p></p>
                   <p></p>
@@ -311,7 +310,7 @@ const Footer = () => {
                 <div class="appIconHolder">
                   <div class="icon-image">
                     {" "}
-                    <BsFacebook />
+                    <BsFacebook className="text-3xl bg-gray-200 p-1 rounded-md shadow-sm" />
                   </div>
                 </div>
               </a>
@@ -319,21 +318,21 @@ const Footer = () => {
                 <div class="appIconHolder">
                   <div class="icon-image">
                     {" "}
-                    <BsInstagram />
+                    <BsInstagram className="text-3xl bg-gray-200 p-1 rounded-md shadow-sm" />
                   </div>
                 </div>
               </a>
-              <a href="#">
+              {/* <a href="#">
                 <div class="appIconHolder">
                   <div class="icon-image">
-                    <BsYoutube />
+                    <BsYoutube className="text-3xl bg-gray-200 p-1 rounded-full shadow-sm"/>
                   </div>
                 </div>
-              </a>
+              </a> */}
               <a href="#">
                 <div class="appIconHolder">
                   <div class="icon-image">
-                    <BsLinkedin />
+                    <BsLinkedin className="text-3xl bg-gray-200 p-1 rounded-md shadow-sm" />
                   </div>
                 </div>
               </a>
@@ -341,13 +340,13 @@ const Footer = () => {
                 <div class="appIconHolder">
                   <div class="icon-image">
                     {" "}
-                    <BsWhatsapp />
+                    <BsWhatsapp className="text-3xl bg-gray-200 p-1 rounded-md shadow-sm" />
                   </div>
                 </div>
               </a>
             </div>
             <div class="copy-right-text">
-              © 2024 Online Gadget Store | All rights reserved
+              © 2024 Medisy Store | All rights reserved
             </div>
           </div>
         </div>

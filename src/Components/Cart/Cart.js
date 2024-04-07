@@ -35,11 +35,11 @@ const Cart = ({ setshowCart }) => {
     setTotalAmt(price);
   }, [products]);
   useEffect(() => {
-    if (totalAmt <= 200) {
+    if (totalAmt <= 800) {
       setShippingCharge(30);
-    } else if (totalAmt <= 400) {
+    } else if (totalAmt <= 1800) {
       setShippingCharge(25);
-    } else if (totalAmt > 401) {
+    } else if (totalAmt > 2200) {
       setShippingCharge(20);
     }
   }, [totalAmt]);
@@ -99,7 +99,7 @@ const Cart = ({ setshowCart }) => {
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
                 stroke="currentColor"
-                class="w-6 h-5 mt-[4px] font-semibold"
+                class="w-8 h-8 mt-[4px] p-1 font-semibold hover:border hover:rounded-full hover:bg-[rgba(40,167,69,.0784)]"
               >
                 <path
                   stroke-linecap="round"
@@ -107,7 +107,7 @@ const Cart = ({ setshowCart }) => {
                   d="M6 18L18 6M6 6l12 12"
                 />
               </svg>
-              <span className="mt-1 font-medium tex-md">Close </span>
+              {/* <span className="mt-1 font-medium tex-md">Close </span> */}
             </div>
           </div>
           <hr />
@@ -172,33 +172,33 @@ const Cart = ({ setshowCart }) => {
                           Lorem ipsum dolor sit amet .
                         </p>
                       </div>
-                      <div class="flex flex-1 items-end justify-between text-sm">
+                      <div class="flex flex-1 items-center justify-between text-sm mt-1">
                         <p class="text-gray-500">Qty {item.quantity}</p>
-                        <div className="quantity-button flex">
+                        <div className="quantity-button flex ">
                           <span
-                            className="px-2 "
+                            className="px-2 pt-2"
                             onClick={() =>
                               dispatch(decreaseQuantity({ id: item.id }))
                             }
                           >
-                            <FaMinus className="mx-1 text-xl font-semibold p-1 bg-green-700 rounded-full text-white" />
+                            <FaMinus className="mx-1 text-2xl font-semibold p-1 bg-green-100 rounded-md text-green-700 border" />
                           </span>
-                          <span className="text-md">{item.quantity}</span>
+                          <span className="text-lg pt-2">{item.quantity}</span>
                           <span
-                            className="px-2"
+                            className="px-2 pt-2"
                             onClick={() =>
                               dispatch(increaseQuantity({ id: item.id }))
                             }
                           >
-                            <FaPlus className=" text-xl font-semibold mx-1 p-1 bg-green-700 rounded-full text-white" />
+                            <FaPlus className=" text-2xl border font-semibold mx-1 p-1 bg-green-100 rounded-md text-green-700" />
                           </span>
                         </div>
 
-                        <div class="flex">
+                        <div class="flex mt-1">
                           <button
                             onClick={() => dispatch(removeItem(item.id))}
                             type="button"
-                            class="font-medium text-md p-[5px] px-2 rounded-2xl  bg-[#206c43] text-white shadow-md"
+                            class="font-medium text-md text-green-700"
                           >
                             Remove
                           </button>

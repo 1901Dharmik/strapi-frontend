@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import FeaturedProducts from "../Components/FeaturedProducts/FeaturedProducts";
 import AllProducts from "../Components/AllProducts/AllProducts";
 import Categories from "../Components/Categories/Categories";
@@ -20,6 +20,7 @@ import Dcategory from "../Components/Dcategory";
 // import SubCategory from "../Components/Categories/SubCategory";
 
 const Home = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
   // const { data} = useFetch(
   //   `/categories?populate=*`
   // );
@@ -68,6 +69,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+      
       {/* <section className="bg-white m-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-0 pt-4 flex justify-between items-center">
           <div className="space-y-6">
@@ -364,10 +366,11 @@ const Home = () => {
       />
       <div className="grid lg:grid-cols-2 sm:grid-cols-1 py-6 mx-6 gap-4 ">
         <Link to="/category/1">
-       
-        <img src="/images/dd1.jpg" alt="" className="rounded-xl shadow-md" />
+          <img src="/images/dd1.jpg" alt="" className="rounded-xl shadow-md" />
         </Link>
-        <img src="/images/dd2.jpg" alt="" className="rounded-xl shadow-md" />
+        <Link to="/category/2">
+          <img src="/images/dd2.jpg" alt="" className="rounded-xl shadow-md" />
+        </Link>
         {/* <img src="/images/dd3.jpg" alt="" className="rounded-xl shadow-md" />
 
 <img src="/images/dd4.jpg" alt="" className="rounded-xl shadow-md" /> */}
@@ -382,7 +385,7 @@ const Home = () => {
       {/* <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1835.303095210523!2d72.55781429538419!3d23.07489506731501!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1711621150024!5m2!1sen!2sin" width="600" height="450" 
       // style={{"border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"}}
       ></iframe> */}
-      <FeaturedProducts  type="Nutrition Care" />
+      <FeaturedProducts type="Nutrition Care" />
       <div class="m-10 mx-4 overflow-hidden rounded-xl   shadow-lg ">
         <div class="flex flex-col  overflow-hidden  bg-[#ecf6ed] sm:flex-row md:h-80">
           <div class="order-first ml-auto h-48 w-full bg-[#ecf6ed] sm:order-none sm:h-auto sm:w-full lg:w-2/5">
@@ -489,9 +492,12 @@ const Home = () => {
       <div className="grid lg:grid-cols-2 sm:grid-cols-1 py-6 mx-6 gap-4 ">
         {/* <img src="/images/dd1.jpg" alt="" className="rounded-xl shadow-md" />
         <img src="/images/dd2.jpg" alt="" className="rounded-xl shadow-md" /> */}
-        <img src="/images/dd3.jpg" alt="" className="rounded-xl shadow-md" />
-
-        <img src="/images/dd4.jpg" alt="" className="rounded-xl shadow-md" />
+        <Link to="/category/2">
+          <img src="/images/dd3.jpg" alt="" className="rounded-xl shadow-md" />
+        </Link>
+        <Link to="/category/1">
+          <img src="/images/dd4.jpg" alt="" className="rounded-xl shadow-md" />
+        </Link>
       </div>
       <div class="m-10 mx-4 overflow-hidden rounded-xl   shadow-lg ">
         <div class="flex flex-col  overflow-hidden  bg-[#d5eadb] sm:flex-row md:h-80">

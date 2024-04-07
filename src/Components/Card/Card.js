@@ -50,11 +50,13 @@ const Card = ({ item }) => {
                     src={ item.attributes?.img?.data[0]?.attributes?.url}
                     alt=""
                     className="mainImg"
+                    style={{transition: 'all .5s'}}
                   />
                   <img
                     src={item.attributes?.img?.data[1]?.attributes?.url}
                     alt=""
                     className="secondImg border-none"
+                    style={{transition: 'all .5s'}}
                   />
                   {/* </Link> */}
                 </div>
