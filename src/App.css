@@ -1535,3 +1535,57 @@ h6,
     opacity: 1;
   }
 }
+
+/* yellow */
+.bag1{
+  background-image: linear-gradient( 135deg, #FDEB71 10%, #F8D800 100%);
+}
+/* blue */
+.bag2{
+  background-image: linear-gradient( 135deg, #ABDCFF 10%, #0396FF 100%);
+}
+/* orange */
+.bag3{
+  background-image: linear-gradient( 135deg, #FEB692 10%, #EA5455 100%);
+} 
+/* purple */
+.bag4{
+  background-image: linear-gradient( 135deg, #CE9FFC 10%, #7367F0 100%);
+}
+.bag5{
+  background-image: linear-gradient( 135deg, #81FBB8 10%, #28C76F 100%);
+}
+/* cart.css with hover img */
+.cards {
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* margin-bottom: 50px; */
+}
+
+.cards .image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  object-fit: contain;
+}
+
+.image:hover .secondImg {
+  z-index: 2;
+
+}
+
+
+.cards img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+}
+
+.mainImg {
+  z-index: 1;
+}
+ 

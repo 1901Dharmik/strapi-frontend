@@ -7,7 +7,7 @@ import {
   FiPieChart,
 } from "react-icons/fi";
 import { AnimatePresence, motion } from "framer-motion";
-
+import  { Link } from "react-router-dom"
 export const ShiftingDropDown = () => {
   return (
     <div className="flex  w-full justify-start  text-gray-700 font-medium md:justify-center z-40">
@@ -212,13 +212,13 @@ const Products = () => {
 const Pricing = () => {
   return (
     <div className="grid grid-cols-3 gap-4 divide-x divide-neutral-200">
-      <a
-        href="./SelectionMenu"
+      <Link
+        to="./SelectionMenu"
         className="flex w-full flex-col items-center justify-center py-2 text-gray-400 transition-colors hover:text-gray-700"
       >
         <FiHome className="mb-2 text-xl text-green-800" />
         <span className="text-xs">Startup</span>
-      </a>
+      </Link>
       <a
         href="#"
         className="flex w-full flex-col items-center justify-center py-2 text-gray-400 transition-colors hover:text-gray-700"

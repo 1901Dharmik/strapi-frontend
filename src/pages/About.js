@@ -59,6 +59,22 @@ const OrderDetails = () => {
   })
   return (
     <>
+    
+
+       
+<div class="grid grid-cols-3 gap-4 font-mono text-white text-sm text-center font-bold">
+   <div class="p-4 rounded-md bg-indigo-300 dark:bg-indigo-800 dark:text-indigo-400">01</div>
+   <div class="p-4 rounded-md bg-indigo-300 dark:bg-indigo-800 dark:text-indigo-400">02</div>
+   <div class="p-4 rounded-md bg-indigo-300 dark:bg-indigo-800 dark:text-indigo-400">03</div>
+   <div class="p-4 rounded-md shadow-lg bg-indigo-500 col-span-2">04</div>
+   <div class="p-4 rounded-md bg-indigo-300 dark:bg-indigo-800 dark:text-indigo-400">05</div>
+   <div class="p-4 rounded-md bg-indigo-300 dark:bg-indigo-800 dark:text-indigo-400">06</div>
+   <div class="p-4 rounded-md shadow-lg bg-indigo-500 col-span-2">07</div>
+</div>
+                
+                                                        
+
+
    <div className="w-full max-w-md px-2 py-16 sm:px-0">
       <Tab.Group>
         <Tab.List className="flex space-x-1 rounded-xl bg-blue-900/20 p-1">

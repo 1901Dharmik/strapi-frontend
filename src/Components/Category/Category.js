@@ -9,19 +9,25 @@ import "swiper/css/pagination";
 import { FreeMode, Pagination, Autoplay } from "swiper/modules";
 
 import PrivateCategory from "../PrivateCategory";
+import Dcategory from "../Dcategory";
+import RelatedProducts from "../ReletedProduct/ReletedProduct";
+
+
 const Category = () => {
   const { id } = useParams();
   const { data } = useFetch(
     `/products?populate=*&[filters][categories][id]=${id}`
   );
+  console.log(data,  "this is the data");
   return (
     <>
-      <div className=""></div>
+      <div className="mx="></div>
+     <h2>Select By Category</h2>
+      <Dcategory/>
+      
+    
       <div className="font-semibold text-2xl mt-6 mx-6">
         {data?.[0]?.attributes?.categories?.data?.[0]?.attributes?.title}
-      </div>
-      <div className="font-semibold text-2xl mt-6 mx-6">
-        {data?.[0]?.data?.attributes?.img?.data[0]?.attributes?.url}
       </div>
       <div className="category-title">
         {/* {
@@ -29,6 +35,7 @@ const Category = () => {
                             ?.attributes?.title
                     } */}
       </div>
+      <div className="ml-6">
       <Swiper
         style={{
           "--swiper-pagination-color": "#206c43",
@@ -91,6 +98,9 @@ const Category = () => {
           </SwiperSlide>
         ))}
       </Swiper>
+     
+      </div>
+     
     </>
   );
 };

@@ -426,7 +426,7 @@ export default function Header() {
                                                   <div className="overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75 h-32 w-32">
                                                     <img
                                                       src={
-                                                        item.attributes.img.data
+                                                        item.attributes.img.data[0]
                                                           .attributes.url
                                                       }
                                                       alt={item.imageAlt}
@@ -1013,7 +1013,7 @@ export default function Header() {
                                   
                                 <img
                                   src={
-                                    item.attributes.img.data.attributes
+                                    item.attributes.img.data[0].attributes
                                       .url
                                   }
                                   className="h-10 w-10 rounded-md"

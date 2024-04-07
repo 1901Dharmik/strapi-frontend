@@ -7,6 +7,13 @@ import { useDispatch } from "react-redux";
 import { AiFillStar } from "react-icons/ai";
 import { addToCart } from "../../redux/cartReducer";
 import { ToastContainer, toast } from "react-toastify";
+import Lottie, { LottieRefCurrentProps } from "lottie-react";
+import { Link } from "react-router-dom";
+import { useRef } from "react";
+import corprateData from "../../assets/corporate.json";
+import consultanceData from "../../assets/consultation.json"
+import freediliveryData from "../../assets/delivery.json"
+import qualityData from "../../assets/quality.json"
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import RelatedProducts from "../../Components/ReletedProduct/ReletedProduct";
@@ -15,6 +22,7 @@ import BreadCrumb from "../../Components/Meta/BreadCrumb";
 import Compo from "../../Components/Compo";
 const Product = () => {
   //
+  const phoneRef = useRef();
   const id = useParams().id;
   const [selectedImg, setSelectedImg] = useState("img");
   const [quantity, setQuantity] = useState(1);
@@ -503,7 +511,7 @@ const Product = () => {
           />
         </div>
       </div>
-      <div className="m-6  ">
+      {/* <div className="m-6  ">
         <div class="bg-[#D5EADB] rounded-2xl p-10 shadow-md">
           <div class="text-center">
             <h2 class="text-3xl font-bold text-[#1F2937] mb-2">
@@ -625,7 +633,102 @@ const Product = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
+     
+      <section className="py-10 bg-green-200 sm:py-16 lg:py-8 mx-4 rounded-2xl shadow-lg ">
+      <div class="text-center">
+            <h2 class="text-3xl font-bold text-green-800 mb-2">
+              Why Choose us?
+            </h2>
+            <p class="text-[#374151] mb-8 px-2">
+              Get complete care for your digestive problems like gas, acidity
+              &amp; constipation.
+            </p>
+          </div>
+        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        
+          <div className="grid grid-cols-2 gap-2 text-center sm:grid-cols-2 gap-y-8 lg:grid-cols-4 sm:gap-12">
+            <div>
+              <div className="flex items-center justify-center w-28 h-28 mx-auto bg-blue-100 rounded-full">
+              <Lottie
+                  onComplete={() => {
+                    phoneRef.current?.setSpeed(0.6);
+                    phoneRef.current?.setDirection(-1);
+                    phoneRef.current?.play();
+                    // setshowCart(false)
+                  }}
+                  loop={true}
+                  lottieRef={phoneRef}
+                  animationData={consultanceData}
+                />
+              </div>
+              <h3 className="mt-8 text-lg font-semibold text-black">
+              Free Expert Consultance
+              </h3>
+             
+            </div>
+            <div>
+              <div className="flex items-center justify-center w-28 h-28 mx-auto bg-orange-100 rounded-full">
+              <Lottie
+                  onComplete={() => {
+                    phoneRef.current?.setSpeed(0.6);
+                    phoneRef.current?.setDirection(-1);
+                    phoneRef.current?.play();
+                    // setshowCart(false)
+                  }}
+                  loop={true}
+                  lottieRef={phoneRef}
+                  animationData={freediliveryData}
+                />
+              </div>
+              <h3 className="mt-8 text-lg font-semibold text-black">
+                {/* Fast &amp; Easy to Load */}
+                Free Home Delivery
+              </h3>
+             
+            </div>
+            <div>
+              <div className="flex items-center justify-center w-28 h-28 mx-auto bg-green-100 rounded-full">
+              <Lottie
+                  onComplete={() => {
+                    phoneRef.current?.setSpeed(0.6);
+                    phoneRef.current?.setDirection(-1);
+                    phoneRef.current?.play();
+                    // setshowCart(false)
+                  }}
+                  loop={true}
+                  lottieRef={phoneRef}
+                  animationData={qualityData}
+                />
+              </div>
+              <h3 className="mt-8 text-lg font-semibold text-black">
+                {/* Light &amp; Dark Version */}
+                Assured Quality
+              </h3>
+             
+            </div>
+            <div>
+              <div className="flex items-center justify-center w-28 h-28 mx-auto bg-red-100 rounded-full">
+              <Lottie 
+                  onComplete={() => {
+                    phoneRef.current?.setSpeed(0.6);
+                    phoneRef.current?.setDirection(-1);
+                    phoneRef.current?.play();
+                    // setshowCart(false)
+                  }}
+                  loop={true}
+                  lottieRef={phoneRef}
+                  animationData={corprateData}
+                />
+              </div>
+              <h3 className="mt-8 text-lg font-semibold text-black">
+              Customized Diet Plan
+              </h3>
+              
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/*  */}
       <div className="flex  my-8">

@@ -331,7 +331,7 @@ const Knowdetail = (propsk) => {
           {/* <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Profile tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p> */}
           <div class="grid gap-8 lg:grid-cols-3 grid-rows-2 md:grid-cols-2  sm:grid-cols-1 mx-10">
             <div>
-              <img
+              <img 
                 className="h-auto  max-w-full rounded-lg"
                 src={propsk.kimg1}
                 alt="SAJIVAN AYURVEDA"

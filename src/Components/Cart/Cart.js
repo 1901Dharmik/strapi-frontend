@@ -154,14 +154,14 @@ const Cart = ({ setshowCart }) => {
                         <div className="quantity-button">
                           <span
                             className="px-2 "
-                            onClick={() => dispatch(decreaseQuantity(item))}
+                            onClick={() => dispatch(decreaseQuantity({id:item.id}))}
                           >
                             -
                           </span>
                           <span>{item.quantity}</span>
                           <span
                             className="px-2"
-                            onClick={() => dispatch(increaseQuantity(item))}
+                            onClick={() => dispatch(increaseQuantity({id:item.id}))}
                           >
                             +
                           </span>
