@@ -249,7 +249,7 @@ export default function Header() {
 
   return (
     <>
-      <div className="bg-white z-10 sticky top-0  ">
+      <div className="bg-white z-10 sticky top-0 backdrop-blur-lg bg-opacity-75">
         {/* Mobile menu */}
 
         <Transition.Root show={open} as={Fragment}>

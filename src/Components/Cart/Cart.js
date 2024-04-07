@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // import "./Cart.scss";
 // import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
 import { useSelector } from "react-redux";
@@ -21,19 +21,40 @@ import { loadStripe } from "@stripe/stripe-js";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 const Cart = ({ setshowCart }) => {
-  const [quantity, setQuantity] = useState(1);
-  const [opacity, setOpacity] = useState(0);
+  const [totalAmt, setTotalAmt] = useState("");
+  const [shippingCharge, setShippingCharge] = useState("");
   const products = useSelector((state) => state.cart.products);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    let price = 0;
+    products.map((item) => {
+      price += item.price * item.quantity;
+      return price;
+    });
+    setTotalAmt(price);
+  }, [products]);
+  useEffect(() => {
+    if (totalAmt <= 200) {
+      setShippingCharge(30);
+    } else if (totalAmt <= 400) {
+      setShippingCharge(25);
+    } else if (totalAmt > 401) {
+      setShippingCharge(20);
+    }
+  }, [totalAmt]);
+
+  const [quantity, setQuantity] = useState(1);
+  const [opacity, setOpacity] = useState(0);
   const navigate = useNavigate();
   const phoneRef = useRef();
-  const totalPrice = () => {
-    let total = 0;
-    products.forEach((item) => {
-      total += item.quantity * item.price;
-    });
-    return total.toFixed(2);
-  };
+  // const totalPrice = () => {
+  //   let total = 0;
+  //   products.forEach((item) => {
+  //     total += item.quantity * item.price;
+  //   });
+  //   return total.toFixed(2);
+  // };
 
   // for quantity
   const handleDecreaseQuantity = (id) => {
@@ -127,13 +148,13 @@ const Cart = ({ setshowCart }) => {
                     class="flex py-6 p-4 border-b overflow-hidden "
                   >
                     <div class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-                      {/* <link to=""> */}
-                      <img
-                        src={item.img}
-                        alt="Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch."
-                        class="h-full w-full object-cover object-center"
-                      />
-                      {/* </link> */}
+                      <Link to={`/product/${item.id}`}>
+                        <img
+                          src={item.img}
+                          alt="Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch."
+                          class="h-full w-full object-cover object-center"
+                        />
+                      </Link>
                     </div>
 
                     <div class="ml-4 flex flex-1 flex-col">
@@ -156,16 +177,20 @@ const Cart = ({ setshowCart }) => {
                         <div className="quantity-button flex">
                           <span
                             className="px-2 "
-                            onClick={() => dispatch(decreaseQuantity({id:item.id}))}
+                            onClick={() =>
+                              dispatch(decreaseQuantity({ id: item.id }))
+                            }
                           >
-                         <FaMinus className="mx-1 text-xl font-semibold p-1 bg-green-100 rounded-md text-green-600" />
+                            <FaMinus className="mx-1 text-xl font-semibold p-1 bg-green-700 rounded-full text-white" />
                           </span>
                           <span className="text-md">{item.quantity}</span>
                           <span
                             className="px-2"
-                            onClick={() => dispatch(increaseQuantity({id:item.id}))}
+                            onClick={() =>
+                              dispatch(increaseQuantity({ id: item.id }))
+                            }
                           >
-                            <FaPlus className=" text-xl font-semibold mx-1 p-1 bg-green-100 rounded-md text-green-600"/>
+                            <FaPlus className=" text-xl font-semibold mx-1 p-1 bg-green-700 rounded-full text-white" />
                           </span>
                         </div>
 
@@ -173,7 +198,7 @@ const Cart = ({ setshowCart }) => {
                           <button
                             onClick={() => dispatch(removeItem(item.id))}
                             type="button"
-                            class="font-medium text-md p-[5px] px-2 rounded-2xl  bg-[#206c43] text-white"
+                            class="font-medium text-md p-[5px] px-2 rounded-2xl  bg-[#206c43] text-white shadow-md"
                           >
                             Remove
                           </button>
@@ -185,9 +210,20 @@ const Cart = ({ setshowCart }) => {
               </div>
 
               <div class="border-t border-gray-200 px-4 py-6 sm:px-6 bg-white bottom-0">
-                <div class="flex justify-between text-base font-medium text-gray-900">
-                  <p>Subtotal</p>
-                  <p>&#8377;{totalPrice()}</p>
+                <div class="flex justify-between text-base font-medium text-gray-900 py-1.5">
+                  <p> Subtotal</p>
+                  {/* <p>&#8377;{totalPrice()}</p> */}
+                  &#8377;{totalAmt}
+                </div>
+                <div class="flex justify-between text-base font-medium text-gray- py-1.5">
+                  <p> Shipping Charge</p>
+                  {/* <p>&#8377;{totalPrice()}</p> */}
+                  &#8377;{shippingCharge}
+                </div>
+                <div class="flex justify-between text-base font-medium text-gray-900 py-1.5">
+                  <p>Total</p>
+                  {/* <p>&#8377;{totalPrice()}</p> */}
+                  &#8377;{totalAmt + shippingCharge}
                 </div>
                 <p class="mt-0.5 text-sm text-gray-500">
                   Shipping and taxes calculated at checkout.
