@@ -53,7 +53,7 @@ const Search = ({ setSearchModal }) => {
           <div className="search-result grid xl:grid-cols-3 gap-4  w-full">
             {data?.map((item) => (
               <div
-                className="search-result-item "
+                className="search-result-item shadow-md px-2"
                 key={item.id}
                 onClick={() => {
                   navigate("/product/" + item.id);
@@ -64,7 +64,7 @@ const Search = ({ setSearchModal }) => {
                   <img
                     src={
                         
-                        item.attributes?.img?.data?.attributes?.url
+                        item.attributes?.img?.data[0]?.attributes?.url
                       }
                     alt="Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch."
                     class="h-full w-full object-cover object-center rounded-md"

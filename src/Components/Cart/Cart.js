@@ -2,6 +2,8 @@ import React, { useState } from "react";
 // import "./Cart.scss";
 // import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
 import { useSelector } from "react-redux";
+import { FaMinus } from "react-icons/fa6";
+import { FaPlus } from "react-icons/fa6";
 import {
   removeItem,
   resetCart,
@@ -151,19 +153,19 @@ const Cart = ({ setshowCart }) => {
                       </div>
                       <div class="flex flex-1 items-end justify-between text-sm">
                         <p class="text-gray-500">Qty {item.quantity}</p>
-                        <div className="quantity-button">
+                        <div className="quantity-button flex">
                           <span
                             className="px-2 "
                             onClick={() => dispatch(decreaseQuantity({id:item.id}))}
                           >
-                            -
+                         <FaMinus className="mx-1 text-xl font-semibold p-1 bg-green-100 rounded-md text-green-600" />
                           </span>
-                          <span>{item.quantity}</span>
+                          <span className="text-md">{item.quantity}</span>
                           <span
                             className="px-2"
                             onClick={() => dispatch(increaseQuantity({id:item.id}))}
                           >
-                            +
+                            <FaPlus className=" text-xl font-semibold mx-1 p-1 bg-green-100 rounded-md text-green-600"/>
                           </span>
                         </div>
 
@@ -171,7 +173,7 @@ const Cart = ({ setshowCart }) => {
                           <button
                             onClick={() => dispatch(removeItem(item.id))}
                             type="button"
-                            class="font-medium text-[#206c43] hover:text-green-500"
+                            class="font-medium text-md p-[5px] px-2 rounded-2xl  bg-[#206c43] text-white"
                           >
                             Remove
                           </button>

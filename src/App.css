@@ -1588,4 +1588,90 @@ h6,
 .mainImg {
   z-index: 1;
 }
+ /* carousel.js */
+ .thumb-carousel {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.thumbnail-container::-webkit-scrollbar {
+  display: none;
+}
+
+.main-image-container {
+  margin-bottom: 10px;
+  text-align: center;
  
+}
+.box-shadow{
+  background: white;
+  box-shadow: 0 0 4px rgb(0 0 0 / 16%);
+}
+.thumbnail-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+ 
+}
+
+.thumbnail {
+  width: 100px;
+  height: 75px;
+  margin-right: 5px;
+  cursor: pointer;
+  opacity: 1;
+  border-radius: 12px;
+  transition: opacity 0.3s ease-in-out;
+  scroll-snap-align: start;
+}
+
+.thumbnail.active {
+  border: 2px solid #111;
+}
+
+.navigation-arrows {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.navigation-arrows button {
+
+  /* border: none; */
+  font-size: 14px;
+  cursor: pointer;
+  /* color: #318e5c; */
+  border-radius: 50%;
+  margin: 0 12px 0 12px;
+  /* background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px); */
+  /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px); */
+}
+
+.navigation-arrows button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+.button {
+  color: #fff !important;
+  opacity: 1 !important;
+}
+
+
+@media (max-width: 768px) {
+  .thumbnail-container {
+    flex-wrap: nowrap;
+  }
+}

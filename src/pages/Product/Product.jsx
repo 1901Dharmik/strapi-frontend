@@ -20,8 +20,35 @@ import RelatedProducts from "../../Components/ReletedProduct/ReletedProduct";
 import Meta from "../../Components/Meta/Meta";
 import BreadCrumb from "../../Components/Meta/BreadCrumb";
 import Compo from "../../Components/Compo";
+const images = [
+  'https://sajivanayurveda.in/wp-content/uploads/2023/01/My-project-1-1-e1675763027728-1024x939.png',
+  'https://sajivanayurveda.in/wp-content/uploads/2023/01/My-project-3-1-e1675763296496-1024x939.png',
+  'https://sajivanayurveda.in/wp-content/uploads/2023/01/My-project-2-1-e1675763509294-1024x939.png',
+  'https://sajivanayurveda.in/wp-content/uploads/2023/01/My-project-2-1-e1675763509294-1024x939.png',
+  'https://sajivanayurveda.in/wp-content/uploads/2023/01/My-project-1-1-e1675763027728-1024x939.png',
+  'https://sajivanayurveda.in/wp-content/uploads/2023/01/My-project-2-1-e1675763509294-1024x939.png',
+  // Add more image URLs here as needed
+];
 const Product = () => {
   //
+  const [activeIndex, setActiveIndex] = useState(0);
+  const handleClick = index => {
+    setActiveIndex(index);
+  };
+  // const [activeIndex, setActiveIndex] = useState(0);
+
+  const goToIndex = index => {
+    setActiveIndex(index);
+  };
+
+  const goToPrev = () => {
+    setActiveIndex(activeIndex === 0 ? images.length - 1 : activeIndex - 1);
+  };
+
+  const goToNext = () => {
+    setActiveIndex(activeIndex === images.length - 1 ? 0 : activeIndex + 1);
+  };
+  
   const phoneRef = useRef();
   const id = useParams().id;
   const [selectedImg, setSelectedImg] = useState("img");
@@ -71,14 +98,14 @@ const Product = () => {
               className="h-[400px] object-cover"
               src={
                 // "https://strapi-backend-ui4h.onrender.com" +
-                data?.attributes?.img?.data?.attributes?.url
+                data?.attributes?.img?.data[0]?.attributes?.url
               }
             />
             <img
               className="h-[400px] object-cover"
               src={
                 // "https://strapi-backend-ui4h.onrender.com" +
-                data?.attributes?.img2?.data[0]?.attributes?.url
+                data?.attributes?.img?.data[1]?.attributes?.url
               }
             />
             <img
@@ -117,6 +144,7 @@ const Product = () => {
               /> */}
           </Carousel>
         </div>
+       
         <div className="product-div-right mt-8  px-4">
           <span className="product-name  text-[32px] font-semibold">
             {data?.attributes?.title}
@@ -200,7 +228,7 @@ const Product = () => {
                     title: data.attributes.title,
                     desc: data.attributes.desc,
                     price: data.attributes.price,
-                    img: data.attributes.img.data.attributes.url,
+                    img: data.attributes.img.data[0].attributes.url,
                     quantity,
                   })
                 )

@@ -840,10 +840,9 @@ export default function Header() {
 
         <div>
           <header className="relative  ">
-            <p className="flex h-10 items-center justify-center bg-[#206c43] px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
+            {/* <p className="flex h-10 items-center justify-center bg-[#206c43] px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
               Welcome To Medisy
-              <span>{/* <DarkMode/> */}</span>
-            </p>
+            </p> */}
 
             <nav
               aria-label="Top"
