@@ -1,49 +1,32 @@
-import React, { useState } from "react";
+import React from 'react';
+import Carousel from 'react-gallery-carousel';
+import 'react-gallery-carousel/dist/index.css';
 
-const Carousel = ({ images }) => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  const handleThumbClick = (index) => {
-    setCurrentSlide(index);
-  };
+const App = () => {
+  const images = [
+    'https://sajivanayurveda.in/wp-content/uploads/2023/01/My-project-1-1-e1675763027728-1024x939.png',
+    'https://sajivanayurveda.in/wp-content/uploads/2023/01/My-project-3-1-e1675763296496-1024x939.png',
+    'https://sajivanayurveda.in/wp-content/uploads/2023/01/My-project-2-1-e1675763509294-1024x939.png',
+    'https://sajivanayurveda.in/wp-content/uploads/2023/01/My-project-2-1-e1675763509294-1024x939.png',
+    'https://sajivanayurveda.in/wp-content/uploads/2023/01/My-project-1-1-e1675763027728-1024x939.png',
+    'https://sajivanayurveda.in/wp-content/uploads/2023/01/My-project-2-1-e1675763509294-1024x939.png',
+    // Add more image URLs here as needed
+  ];
 
   return (
-    <div className="relative">
-      <div
-        className="flex overflow-x-scroll hide-scrollbar"
-        style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-      >
-        {images.map((image, index) => (
-          <div key={index} className="thumb-wrapper">
-            <div className="thumb">
-              <img src={image.thumb} alt="" />
-            </div>
-          </div>
-        ))}
-      </div>
-      <div className="main-carousel">
-        {images.map((image, index) => (
-          <div
-            key={index}
-            className={`slide ${currentSlide === index ? "active" : ""}`}
-          >
-            <img src={image.src} alt="" />
-          </div>
-        ))}
-      </div>
-      <div className="thumb-nav">
-        {images.map((image, index) => (
-          <div
-            key={index}
-            className={`thumb ${currentSlide === index ? "active" : ""}`}
-            onClick={() => handleThumbClick(index)}
-          >
-            <img src={image.thumb} alt="" />
-          </div>
-        ))}
-      </div>
+    <div className="max-w-[500px]">
+       <Carousel   
+       hasMediaButton={false}
+       hasSizeButton={false}
+       hasLeftButto={'centerLeft'}>
+      {images.map((image) => (
+        <img key={image} src= {image} alt="An Image" />
+      ))}
+
+    </Carousel>
     </div>
+   
   );
 };
 
-export default Carousel;
+export default App;

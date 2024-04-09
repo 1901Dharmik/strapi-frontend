@@ -11,19 +11,20 @@ import Lottie, { LottieRefCurrentProps } from "lottie-react";
 import { Link } from "react-router-dom";
 import { useRef } from "react";
 import corprateData from "../../assets/corporate.json";
-import consultanceData from "../../assets/consultation.json"
-import freediliveryData from "../../assets/delivery.json"
-import qualityData from "../../assets/quality.json"
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from "react-responsive-carousel";
+import consultanceData from "../../assets/consultation.json";
+import freediliveryData from "../../assets/delivery.json";
+import qualityData from "../../assets/quality.json";
+// import "react-responsive-carousel/lib/styles/carousel.min.css";
+// requires a loader
+// import { Carousel } from "react-responsive-carousel";
 import RelatedProducts from "../../Components/ReletedProduct/ReletedProduct";
 import Meta from "../../Components/Meta/Meta";
 import BreadCrumb from "../../Components/Meta/BreadCrumb";
 import Compo from "../../Components/Compo";
+import Carousel from "react-gallery-carousel";
+import "react-gallery-carousel/dist/index.css";
 
 const Product = () => {
-
-  
   const phoneRef = useRef();
   const id = useParams().id;
   const [selectedImg, setSelectedImg] = useState("img");
@@ -36,95 +37,68 @@ const Product = () => {
     <>
       <Meta title={data?.attributes?.title} />
       <BreadCrumb title={data?.attributes?.title} />
-      <div className="grid xl:grid-cols-2 sm:grid-cols-1 bg-[#f9f9f9]">
-        <div className="overflow-scroll sajivan-ayurveda m-6">
-          <Carousel
-            infiniteLoop={false}
-            showIndicators={false}
-            showStatus={false}
-            thumbWidth={60}
-            axis="horizontal"
-            // autoPlay="{true}"
-            className="productCarousel "
-          >
-            {/* <img src={process.env.REACT_APP_DEV_URL +
-                      data.img.data[0].attributes.url} /> */}
-
-            {/* {product.images.map((img) => (
-                    <img
-                    src={
-                      process.env.REACT_APP_API_URL_UPLOAD +
-                      product.img?.data?.attributes?.url
-                    }
-                        key={img.id}
-                        id={img.id}
-                        data={img.attributes}
-                    />
-                ))} */}
+     
+      <div class=" overflow-hidden rounded-xl  ">
+        <div class="flex flex-col  overflow-hidden sm:flex-row ">
+          <div class="order-first ml-auto h-full w-full sm:order-none sm:h-auto sm:w-full lg:w-2/5">
             {/* <img
-            alt="Product Image"
-            className="aspect-square object-cover border border-gray-200 w-full rounded-lg overflow-hidden dark:border-gray-800"
-            height={600}
-            src="/placeholder.svg"
-            width={600}
-          /> */}
-
-            <img
-              className="h-[400px] object-cover"
-              src={
-                // "https://strapi-backend-ui4h.onrender.com" +
-                data?.attributes?.img?.data[0]?.attributes?.url
-              }
-            />
-            <img
-              className="h-[400px] object-cover"
-              src={
-                // "https://strapi-backend-ui4h.onrender.com" +
-                data?.attributes?.img?.data[1]?.attributes?.url
-              }
-            />
-            <img
-              className="h-[400px] object-cover"
-              src={
-                // "https://strapi-backend-ui4h.onrender.com" +
-                data?.attributes?.img2?.data[1]?.attributes?.url
-              }
-            />
-            <img
-              className="h-[400px] object-cover"
-              src={
-                // "https://strapi-backend-ui4h.onrender.com" +
-                data?.attributes?.img2?.data[2]?.attributes?.url
-              }
-            />
-            <img
-              className="h-[400px] object-cover"
-              src={
-                // "https://strapi-backend-ui4h.onrender.com" +
-                data?.attributes?.img2?.data[3]?.attributes?.url
-              }
-            />
-            <img
-              className="h-[400px] object-cover"
-              src={
-                // "https://strapi-backend-ui4h.onrender.com" +
-                data?.attributes?.img2?.data[4]?.attributes?.url
-              }
-            />
-            {/* <img className="h-[400px]"
+              class="h-full w-full object-contain xl:px-2 xl:mt-2 "
+              src="https://cdn.shopify.com/s/files/1/0575/8920/3125/files/Digestive-Care.png?v=1629541512"
+              loading="lazy"
+            /> */}
+            <div className="m-4 carousel">
+            <Carousel
+              hasMediaButton={false}
+              hasSizeButton={false}
+              hasLeftButto={"centerLeft"}
+            >
+              <img
                 src={
-                  'http://localhost:1337' +
-                data?.attributes?.img2?.data[5]?.attributes?.url
+                  // "https://strapi-backend-ui4h.onrender.com" +
+                  data?.attributes?.img?.data[0]?.attributes?.url
                 }
-              /> */}
-          </Carousel>
-        </div>
-      
-        <div className="product-div-right mt-8  px-4">
-          <span className="product-name  text-[32px] font-semibold">
-            {data?.attributes?.title}
-          </span>
-          {/* <div className="product-rating flex">
+              />
+              <img
+                src={
+                  // "https://strapi-backend-ui4h.onrender.com" +
+                  data?.attributes?.img?.data[1]?.attributes?.url
+                }
+              />
+              <img
+                src={
+                  // "https://strapi-backend-ui4h.onrender.com" +
+                  data?.attributes?.img2?.data[1]?.attributes?.url
+                }
+              />
+              <img
+                src={
+                  // "https://strapi-backend-ui4h.onrender.com" +
+                  data?.attributes?.img2?.data[2]?.attributes?.url
+                }
+              />
+              <img
+                src={
+                  // "https://strapi-backend-ui4h.onrender.com" +
+                  data?.attributes?.img2?.data[3]?.attributes?.url
+                }
+              />
+              <img
+                src={
+                  // "https://strapi-backend-ui4h.onrender.com" +
+                  data?.attributes?.img2?.data[4]?.attributes?.url
+                }
+              />
+            </Carousel>
+          </div>
+          </div>
+          <div class=" flex w-full flex-col sm:w-1/2 sm:p-8 lg:w-3/5 lg:mt-6">
+          <div className="">
+          {/* content - start */}
+          <div className="m-4">
+            <span className="product-name  text-[32px] font-semibold">
+              {data?.attributes?.title}
+            </span>
+            {/* <div className="product-rating flex">
             <span>
               <AiFillStar />
             </span>
@@ -142,26 +116,26 @@ const Product = () => {
             </span>
             <span>(350 ratings)</span>
           </div> */}
-          <p className="product-description my-[15px] font-light text-[17px] pr-8 text-[#6c6c6c] leading-normal">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae
-            animi ad minima veritatis dolore. Architecto facere dignissimos
-            voluptate fugit ratione molestias quis quidem exercitationem
-            voluptas.
-          </p>
+            <p className="product-description my-[15px] font-light text-[17px] lg:pr-8 sm:pr-2 text-[#6c6c6c] leading-normal">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae
+              animi ad minima veritatis dolore. Architecto facere dignissimos
+              voluptate fugit ratione molestias quis quidem exercitationem
+              voluptas.
+            </p>
 
-          <div className="info__price flex">
-            <span className="digestiveproduct-price font-semibold text-2xl">
-              Rs.&nbsp;{data?.attributes?.price}
-            </span>
-            <span className="origin_price text-2xl font-light font-body-3-2  pl-3 text-[#9b9b9b] line-through  mr-6">
-              Rs.&nbsp;28,999
-            </span>
-            {/* <span class="inline-flex items-center gap-x-1 py-0 px-2 rounded-lg text-[13px] font-md bg-green-100  dark:bg-blue-800/30 text-green-700 ring-1 ring-inset ring-green-600/20">Sale</span> */}
-            <span className="tag font-body-3-2 mt-1 pl-3 ">
-              (&nbsp;incl. of all taxes&nbsp;)
-            </span>
-          </div>
-          {/* <div className="btn-groups">
+            <div className="info__price flex">
+              <span className="digestiveproduct-price font-semibold text-2xl">
+                Rs.&nbsp;{data?.attributes?.price}
+              </span>
+              <span className="origin_price text-2xl font-light font-body-3-2  pl-3 text-[#9b9b9b] line-through  mr-6">
+                Rs.&nbsp;28,999
+              </span>
+              {/* <span class="inline-flex items-center gap-x-1 py-0 px-2 rounded-lg text-[13px] font-md bg-green-100  dark:bg-blue-800/30 text-green-700 ring-1 ring-inset ring-green-600/20">Sale</span> */}
+              <span className="tag font-body-3-2 mt-1 pl-3 ">
+                (&nbsp;incl. of all taxes&nbsp;)
+              </span>
+            </div>
+            {/* <div className="btn-groups">
                 <div className="selection-box">
                   <select className="choose">
                     <option value="option1"> 1</option>
@@ -176,58 +150,61 @@ const Product = () => {
                   <i className="fas fa-wallet"></i>Buy Now
                 </button>
               </div> */}
-          <div className="flex flex-row items-center gap-12 pt-4">
-            <div className="flex flex-row items-center">
+            <div className="flex flex-row items-center gap-12 pt-4">
+              <div className="flex flex-row items-center">
+                <button
+                  className="bg-green-100 py-[4px] px-[14px] rounded-lg text-[#206c43] text-2xl shadow-md"
+                  onClick={() =>
+                    setQuantity((prev) => (prev === 1 ? 1 : prev - 1))
+                  }
+                >
+                  -
+                </button>
+                <span className="py-4 px-6 text-2xl rounded-lg">
+                  {" "}
+                  {quantity}
+                </span>
+                <button
+                  className="bg-green-100 py-[4px] px-[12px] shadow-md rounded-lg text-[#206c43] text-2xl"
+                  onClick={() => setQuantity((prev) => prev + 1)}
+                >
+                  +
+                </button>
+              </div>
               <button
-                className="bg-green-100 py-[4px] px-[14px] rounded-lg text-[#206c43] text-2xl shadow-md"
+                className="bg-[#206c43] text-md text-white font-semibold py-3 xl:px-12 rounded-md h-full sm:px-3 add-to-cart-pd hover:bg-[#318e4c] shadow"
                 onClick={() =>
-                  setQuantity((prev) => (prev === 1 ? 1 : prev - 1))
+                  dispatch(
+                    addToCart({
+                      id: data.id,
+                      title: data.attributes.title,
+                      desc: data.attributes.desc,
+                      price: data.attributes.price,
+                      img: data.attributes.img.data[0].attributes.url,
+                      quantity,
+                    })
+                  )
                 }
               >
-                -
-              </button>
-              <span className="py-4 px-6 text-2xl rounded-lg"> {quantity}</span>
-              <button
-                className="bg-green-100 py-[4px] px-[12px] shadow-md rounded-lg text-[#206c43] text-2xl"
-                onClick={() => setQuantity((prev) => prev + 1)}
-              >
-                +
+                Add To Cart
               </button>
             </div>
-            <button
-              className="bg-[#206c43] text-md text-white font-semibold py-3 xl:px-12 rounded-md h-full sm:px-3 add-to-cart-pd hover:bg-[#318e4c] shadow"
-              onClick={() =>
-                dispatch(
-                  addToCart({
-                    id: data.id,
-                    title: data.attributes.title,
-                    desc: data.attributes.desc,
-                    price: data.attributes.price,
-                    img: data.attributes.img.data[0].attributes.url,
-                    quantity,
-                  })
-                )
-              }
-            >
-              Add To Cart
-            </button>
-          </div>
-          <ul class="reviews flex ">
-            <li className="text-[#6c6c6c] text-xl">
-              4.4{data?.attributes?.rating}
-            </li>
-            <li>
-              <img src="https://cdn.shopify.com/s/files/1/0575/8920/3125/files/reviewstar.png?v=1629806756" />
-            </li>
-            <li className="px-6 text-[#6c6c6c] text-lg italic">
-              13500+ People Using&nbsp;
-            </li>
+            <ul class="reviews flex ">
+              <li className="text-[#6c6c6c] text-xl">
+                4.4{data?.attributes?.rating}
+              </li>
+              <li>
+                <img src="https://cdn.shopify.com/s/files/1/0575/8920/3125/files/reviewstar.png?v=1629806756" />
+              </li>
+              <li className="px-6 text-[#6c6c6c] text-lg italic">
+                13500+ People Using&nbsp;
+              </li>
 
-            {/* <li className="float">30 Days</li> */}
-          </ul>
+              {/* <li className="float">30 Days</li> */}
+            </ul>
 
-          <ul className="product-details">
-            {/* <div className="flex mb-2">
+            <ul className="product-details">
+              {/* <div className="flex mb-2">
               <h5 className="w-[20%] font-semibold text-lg">Includes :-</h5>
               <div className="font-light mb-2">
                 Soulfly 30 Caps (1), Xor-Digestive Powder 100gm(1), Pilocool 60
@@ -235,7 +212,7 @@ const Product = () => {
               </div>
             </div> */}
 
-            {/* <div class="max-w-4xl mx-auto py-4 pr-6">
+              {/* <div class="max-w-4xl mx-auto py-4 pr-6">
               <div class="flex flex-col space-y-6">
                 <div className="flex">
                   <h3 class="text-lg font-semibold ">Includes</h3>
@@ -271,48 +248,48 @@ const Product = () => {
                 </div>
               </div>
             </div> */}
-            <ul className="product-details">
-              {/* <li className="kevin pb-0 flex my-2">
+              <ul className="product-details">
+                {/* <li className="kevin pb-0 flex my-2">
               <h6 className="font-semibold text-lg">Care For</h6>
               <p className="mx-8">
                 <span className="inline-block bg-[#d5eadb] rounded-full px-3 py-2 text-sm font-light mr-2 mb-2 text-green-800">Stomach Gas</span> <span className="inline-block bg-[#d5eadb] text-green-800 rounded-full px-3 py-2 text-sm font-light mr-2 mb-2">Acidity</span>
                 <span className="inline-block text-green-800 bg-[#d5eadb] rounded-full px-3 py-2 text-sm font-light mr-2 mb-2">Constipation</span>
               </p>
             </li> */}
-              <li className="flex mb-[15px] my-2">
-                <h6 className="font-semibold text-lg">Includes</h6>
-                <p className="mx-8 text-[15px] text-gray-700 font-light pr-8 ">
-                  {/* {product.includes} */}
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic
-                  amet, eveniet adipisci recusandae.
-                </p>
-              </li>
+                <li className="flex mb-[15px] my-2">
+                  <h6 className="font-semibold text-lg">Includes</h6>
+                  <p className="mx-8 text-[15px] text-gray-700 font-light lg:pr-8 sm:pr-2 ">
+                    {/* {product.includes} */}
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Hic amet, eveniet adipisci recusandae.
+                  </p>
+                </li>
 
-              <li className="py-2 flex">
-                <h6 className="font-semibold text-lg">Dosage</h6>
-                <p className="text-[15px] text-gray-700 font-light">
-                  <a href="#" className="pr-1 text-[#206c43] ml-10 pt-[4px]">
-                    Click Here
-                  </a>
-                  To Download
-                </p>
-              </li>
-              <li className="py-2 flex">
-                <h6 className="font-semibold text-lg">Dilivery</h6>
-                <p className="text-[15px] text-gray-700 font-light pt-[4px] ml-10">
-                  <a href="#"></a>
-                  Free Home Delivery
-                </p>
-              </li>
-              <li className="py-2 flex">
-                <h6 className="font-semibold text-lg">Shipping</h6>
-                <p className="text-[15px] text-gray-700 font-light pt-[4px] ml-[30px]">
-                  <a href="#"></a>
-                  All Over India
-                </p>
-              </li>
-            </ul>
-            {/* <div className="flex">
+                <li className="py-2 flex">
+                  <h6 className="font-semibold text-lg">Dosage</h6>
+                  <p className="text-[15px] text-gray-700 font-light">
+                    <a href="#" className="pr-1 text-[#206c43] ml-10 pt-[4px]">
+                      Click Here
+                    </a>
+                    To Download
+                  </p>
+                </li>
+                <li className="py-2 flex">
+                  <h6 className="font-semibold text-lg">Dilivery</h6>
+                  <p className="text-[15px] text-gray-700 font-light pt-[4px] ml-10">
+                    <a href="#"></a>
+                    Free Home Delivery
+                  </p>
+                </li>
+                <li className="py-2 flex">
+                  <h6 className="font-semibold text-lg">Shipping</h6>
+                  <p className="text-[15px] text-gray-700 font-light pt-[4px] ml-[30px]">
+                    <a href="#"></a>
+                    All Over India
+                  </p>
+                </li>
+              </ul>
+              {/* <div className="flex">
               <h5 className="w-[20%] font-semibold text-lg">Care For :-</h5>
               <span class="inline-block bg-[#d5eadb] rounded-full px-3 py-2 text-sm font-light mr-2 mb-2">
                 Gas
@@ -324,18 +301,18 @@ const Product = () => {
                 Constipation
               </span>
             </div> */}
-            {/* <li className="flex mb-[15px]">
+              {/* <li className="flex mb-[15px]">
               <h6>Includes</h6>
               <p>{product.includes}</p>
             </li> */}
-            {/* <li className="kevin pb-2">
+              {/* <li className="kevin pb-2">
               <h6>Care For</h6>
               <p>
                 <span>Stomach Gas</span> <span>Acidity</span>
                 <span>Constipation</span>
               </p>
             </li> */}
-            {/* <li className="py-3">
+              {/* <li className="py-3">
               <h6>Dosage</h6>
               <p>
                 <a href="#" className="pr-1 text-[#206c43]">
@@ -344,21 +321,21 @@ const Product = () => {
                 To Download
               </p>
             </li> */}
-            {/* <li className="py-3">
+              {/* <li className="py-3">
               <h6>Dilivery</h6>
               <p>
                 <a href="#"></a>
                 Free Home Delivery
               </p>
             </li> */}
-            {/* <li className="py-3">
+              {/* <li className="py-3">
               <h6>Shipping</h6>
               <p>
                 <a href="#"></a>
                 All Over India
               </p>
             </li> */}
-            {/* <li className="py-3">
+              {/* <li className="py-3">
                   <h6>Services</h6>
                   <img src="./icons/verified.png" alt="" />
                   <p className="padding-bottom">
@@ -376,9 +353,9 @@ const Product = () => {
                     alt=""
                   />
                 </li> */}
-          </ul>
-          <span className="divider" />
-          {/* <div className="info-item">
+            </ul>
+            <span className="divider" />
+            {/* <div className="info-item">
             <span className="text-bold">
               Category:{" "}
               <span>{product.categories.data[0].attributes.title}</span>
@@ -394,9 +371,14 @@ const Product = () => {
               </span>
             </span>
           </div> */}
+          </div>
+        
+          {/* content - end */}
+        </div>
+            
+          </div>
         </div>
       </div>
-
       <div>
         <Tittle
           name="Problem To Cure"
@@ -637,23 +619,20 @@ const Product = () => {
           </div>
         </div>
       </div> */}
-     
+
       <section className="py-10 bg-green-200 sm:py-16 lg:py-8 mx-4 rounded-2xl shadow-lg ">
-      <div class="text-center">
-            <h2 class="text-3xl font-bold text-green-800 mb-2">
-              Why Choose us?
-            </h2>
-            <p class="text-[#374151] mb-8 px-2">
-              Get complete care for your digestive problems like gas, acidity
-              &amp; constipation.
-            </p>
-          </div>
+        <div class="text-center">
+          <h2 class="text-3xl font-bold text-green-800 mb-2">Why Choose us?</h2>
+          <p class="text-[#374151] mb-8 px-2">
+            Get complete care for your digestive problems like gas, acidity
+            &amp; constipation.
+          </p>
+        </div>
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-        
           <div className="grid grid-cols-2 gap-2 text-center sm:grid-cols-2 gap-y-8 lg:grid-cols-4 sm:gap-12">
             <div>
               <div className="flex items-center justify-center w-28 h-28 mx-auto bg-blue-100 rounded-full">
-              <Lottie
+                <Lottie
                   onComplete={() => {
                     phoneRef.current?.setSpeed(0.6);
                     phoneRef.current?.setDirection(-1);
@@ -666,13 +645,12 @@ const Product = () => {
                 />
               </div>
               <h3 className="mt-8 text-lg font-semibold text-black">
-              Free Expert Consultance
+                Free Expert Consultance
               </h3>
-             
             </div>
             <div>
               <div className="flex items-center justify-center w-28 h-28 mx-auto bg-orange-100 rounded-full">
-              <Lottie
+                <Lottie
                   onComplete={() => {
                     phoneRef.current?.setSpeed(0.6);
                     phoneRef.current?.setDirection(-1);
@@ -688,11 +666,10 @@ const Product = () => {
                 {/* Fast &amp; Easy to Load */}
                 Free Home Delivery
               </h3>
-             
             </div>
             <div>
               <div className="flex items-center justify-center w-28 h-28 mx-auto bg-green-100 rounded-full">
-              <Lottie
+                <Lottie
                   onComplete={() => {
                     phoneRef.current?.setSpeed(0.6);
                     phoneRef.current?.setDirection(-1);
@@ -708,11 +685,10 @@ const Product = () => {
                 {/* Light &amp; Dark Version */}
                 Assured Quality
               </h3>
-             
             </div>
             <div>
               <div className="flex items-center justify-center w-28 h-28 mx-auto bg-red-100 rounded-full">
-              <Lottie 
+                <Lottie
                   onComplete={() => {
                     phoneRef.current?.setSpeed(0.6);
                     phoneRef.current?.setDirection(-1);
@@ -725,9 +701,8 @@ const Product = () => {
                 />
               </div>
               <h3 className="mt-8 text-lg font-semibold text-black">
-              Customized Diet Plan
+                Customized Diet Plan
               </h3>
-              
             </div>
           </div>
         </div>

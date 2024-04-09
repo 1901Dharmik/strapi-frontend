@@ -16,6 +16,7 @@ import Meta from "../Components/Meta/Meta";
 // import required modules
 import { FreeMode, Pagination, Autoplay } from "swiper/modules";
 import Dcategory from "../Components/Dcategory";
+import Carousel from "../Components/Carousel/Carousel";
 
 // import SubCategory from "../Components/Categories/SubCategory";
 
@@ -69,7 +70,153 @@ const Home = () => {
           </div>
         </div>
       </section>
-      
+      <div className="flex relative">
+        <div className="m-6 ">
+          <Carousel
+            hasMediaButton={false}
+            hasSizeButton={false}
+            hasLeftButto={"centerLeft"}
+          />
+        </div>
+    <div className="mx-6">
+          {/* content - start */}
+          <div className="md:py-8">
+            {/* name - start */}
+            <div className="mb-2 md:mb-3">
+              <span className="mb-0.5 inline-block text-gray-500">
+                Fancy Brand
+              </span>
+              <h2 className="text-2xl font-bold text-gray-800 lg:text-3xl">
+                Pullover with pattern
+              </h2>
+            </div>
+            {/* name - end */}
+            {/* rating - start */}
+            <div className="mb-6 flex items-center gap-3 md:mb-10">
+              <div className="flex h-7 items-center gap-1 rounded-full bg-indigo-500 px-2 text-white">
+                <span className="text-sm">4.2</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              </div>
+              <span className="text-sm text-gray-500 transition duration-100">
+                56 ratings
+              </span>
+            </div>
+            {/* rating - end */}
+            {/* color - start */}
+            <div className="mb-4 md:mb-6">
+              <span className="mb-3 inline-block text-sm font-semibold text-gray-500 md:text-base">
+                Color
+              </span>
+              <div className="flex flex-wrap gap-2">
+                <span className="h-8 w-8 rounded-full border bg-gray-800 ring-2 ring-gray-800 ring-offset-1 transition duration-100" />
+                <button
+                  type="button"
+                  className="h-8 w-8 rounded-full border bg-gray-500 ring-2 ring-transparent ring-offset-1 transition duration-100 hover:ring-gray-200"
+                />
+                <button
+                  type="button"
+                  className="h-8 w-8 rounded-full border bg-gray-200 ring-2 ring-transparent ring-offset-1 transition duration-100 hover:ring-gray-200"
+                />
+                <button
+                  type="button"
+                  className="h-8 w-8 rounded-full border bg-white ring-2 ring-transparent ring-offset-1 transition duration-100 hover:ring-gray-200"
+                />
+              </div>
+            </div>
+            {/* color - end */}
+            {/* size - start */}
+            <div className="mb-8 md:mb-10">
+              <span className="mb-3 inline-block text-sm font-semibold text-gray-500 md:text-base">
+                Size
+              </span>
+              <div className="flex flex-wrap gap-3">
+                <button
+                  type="button"
+                  className="flex h-8 w-12 items-center justify-center rounded-md border bg-white text-center text-sm font-semibold text-gray-800 transition duration-100 hover:bg-gray-100 active:bg-gray-200"
+                >
+                  XS
+                </button>
+                <button
+                  type="button"
+                  className="flex h-8 w-12 items-center justify-center rounded-md border bg-white text-center text-sm font-semibold text-gray-800 transition duration-100 hover:bg-gray-100 active:bg-gray-200"
+                >
+                  S
+                </button>
+                <span className="flex h-8 w-12 cursor-default items-center justify-center rounded-md border border-indigo-500 bg-indigo-500 text-center text-sm font-semibold text-white">
+                  M
+                </span>
+                <button
+                  type="button"
+                  className="flex h-8 w-12 items-center justify-center rounded-md border bg-white text-center text-sm font-semibold text-gray-800 transition duration-100 hover:bg-gray-100 active:bg-gray-200"
+                >
+                  L
+                </button>
+                <span className="flex h-8 w-12 cursor-not-allowed items-center justify-center rounded-md border border-transparent bg-white text-center text-sm font-semibold text-gray-400">
+                  XL
+                </span>
+              </div>
+            </div>
+            {/* size - end */}
+            {/* price - start */}
+            <div className="mb-4">
+              <div className="flex items-end gap-2">
+                <span className="text-xl font-bold text-gray-800 md:text-2xl">
+                  $15.00
+                </span>
+                <span className="mb-0.5 text-red-500 line-through">$30.00</span>
+              </div>
+              <span className="text-sm text-gray-500">
+                incl. VAT plus shipping
+              </span>
+            </div>
+            {/* price - end */}
+            {/* shipping notice - start */}
+            <div className="mb-6 flex items-center gap-2 text-gray-500">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"
+                />
+              </svg>
+              <span className="text-sm">2-4 day shipping</span>
+            </div>
+            {/* shipping notice - end */}
+            {/* buttons - start */}
+            <div className="flex gap-2.5">
+              <a
+                href="#"
+                className="inline-block flex-1 rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 sm:flex-none md:text-base"
+              >
+                Add to cart
+              </a>
+              <a
+                href="#"
+                className="inline-block rounded-lg bg-gray-200 px-8 py-3 text-center text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base"
+              >
+                Buy now
+              </a>
+            </div>
+            {/* buttons - end */}
+          </div>
+          {/* content - end */}
+        </div>
+      </div>
       {/* <section className="bg-white m-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-0 pt-4 flex justify-between items-center">
           <div className="space-y-6">
@@ -102,6 +249,143 @@ const Home = () => {
           </div>
         </div>
       </section> */}
+      <div className="grid lg:grid-cols-5 ">
+        <div className="lg:col-span-2 sm:grid-cols-1 bg-green-100">
+        <Carousel
+            hasMediaButton={false}
+            hasSizeButton={false}
+            hasLeftButto={"centerLeft"}
+          />
+        </div>
+        <div className="col-span-3">
+           <div class="bg-[#f3f4f6] p-5">
+        <div class="grid xl:grid-cols-2 gap-8 sm:grid-cols-1 ">
+          <Swiper
+            style={{
+              "--swiper-pagination-color": "#206c43",
+            }}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            loop={true}
+            modules={[FreeMode, Autoplay, Pagination]}
+            pagination={{
+              clickable: true,
+            }}
+            className="mySwiper"
+          >
+            <SwiperSlide className="">
+              <img
+                src="./images/aa1.jpg"
+                alt=""
+                className="h-[400px] w-[700px] rounded-md"
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              {" "}
+              <img
+                src="./images/aa2.jpg"
+                alt=""
+                className="h-[400px] w-[700px] rounded-md"
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              {" "}
+              <img
+                src="./images/aa3.jpg"
+                alt=""
+                className="h-[400px] w-[700px] rounded-md"
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              {" "}
+              <img
+                src="./images/aa4.jpg"
+                alt=""
+                className="h-[400px] w-[700px] rounded-md"
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              {" "}
+              <img
+                src="./images/aa5.jpg"
+                alt=""
+                className="h-[400px] w-[700px] rounded-md"
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              {" "}
+              <img
+                src="./images/aa6.jpg"
+                alt=""
+                className="h-[400px] w-[700px] rounded-md"
+              />
+            </SwiperSlide>
+          </Swiper>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div
+              class="rounded-lg border shadow-sm col-span-1 bg-[#81c784] text-white"
+              data-v0-t="card"
+            >
+              <div class="flex flex-col space-y-1.5 p-6">
+                <h3 class="text-2xl font-semibold whitespace-nowrap leading-none tracking-tight">
+                  Best Sale
+                </h3>
+              </div>
+              <div class="p-6">
+                <h3 class="text-2xl font-bold">Laptops</h3>
+                <p class="mt-2">Start ₹91,000 to ₹2,56,000</p>
+              </div>
+            </div>
+            <div
+              class="rounded-lg border shadow-sm col-span-1 bg-[#81c784] text-white"
+              data-v0-t="card"
+            >
+              <div class="flex flex-col space-y-1.5 p-6">
+                <h3 class="text-2xl font-semibold whitespace-nowrap leading-none tracking-tight">
+                  New Arrival
+                </h3>
+              </div>
+              <div class="p-6">
+                <h3 class="text-2xl font-bold">Smart Watch</h3>
+                <p class="mt-2">Start ₹14,999 to ₹24,999</p>
+              </div>
+            </div>
+            <div
+              class="rounded-lg border shadow-sm col-span-1 bg-[#ffe0b2] text-white"
+              data-v0-t="card"
+            >
+              <div class="flex flex-col space-y-1.5 p-6">
+                <h3 class="text-2xl font-semibold whitespace-nowrap leading-none tracking-tight">
+                  New Arrival
+                </h3>
+              </div>
+              <div class="p-6">
+                <h3 class="text-2xl font-bold">Mobiles</h3>
+                <p class="mt-2">Start ₹58,999 to ₹2,16,000</p>
+              </div>
+            </div>
+            <div
+              class="rounded-lg border shadow-sm col-span-1 bg-[#ffe0b2] text-white"
+              data-v0-t="card"
+            >
+              <div class="flex flex-col space-y-1.5 p-6">
+                <h3 class="text-2xl font-semibold whitespace-nowrap leading-none tracking-tight">
+                  New Arrival
+                </h3>
+              </div>
+              <div class="p-6">
+                <h3 class="text-2xl font-bold">Earphone</h3>
+                <p class="mt-2">Start ₹8,999 to ₹16,000</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        </div>
+      </div>
       {/* <div class="bg-[#f3f4f6] p-5">
         <div class="grid xl:grid-cols-2 gap-8 sm:grid-cols-1 ">
           <Swiper
@@ -228,7 +512,7 @@ const Home = () => {
           </div>
         </div>
       </div> */}
-      <div className="mx-5">
+      <div className="mx-5 ">
         {/* <Swiper style={{
             "--swiper-pagination-color": "#206c43",
           }}
@@ -499,34 +783,162 @@ const Home = () => {
           <img src="/images/dd4.jpg" alt="" className="rounded-xl shadow-md" />
         </Link>
       </div>
-      <div class="m-10 mx-4 overflow-hidden rounded-xl   shadow-lg ">
-        <div class="flex flex-col  overflow-hidden  bg-[#d5eadb] sm:flex-row md:h-80">
-          <div class="order-first ml-auto h-48 w-full bg-[#d5eadb] sm:order-none sm:h-auto sm:w-full lg:w-2/5">
-            <img
+      <div class="m-10 mx-4 overflow-hidden rounded-xl shadow-lg ">
+        <div class="flex flex-col  overflow-hidden  bg-[#d5eadb] sm:flex-row ">
+          <div class="order-first ml-auto h-full w-full bg-[#d5eadb] sm:order-none sm:h-auto sm:w-full lg:w-2/5">
+            {/* <img
               class="h-full w-full object-contain xl:px-2 xl:mt-2 "
               src="https://cdn.shopify.com/s/files/1/0575/8920/3125/files/Digestive-Care.png?v=1629541512"
               loading="lazy"
-            />
+            /> */}
+            <div className="m-5">
+             <Carousel 
+            hasMediaButton={false}
+            hasSizeButton={false}
+            hasLeftButto={"centerLeft"}
+          />
           </div>
-          <div class="text-center flex w-full flex-col p-4 sm:w-1/2 sm:p-8 lg:w-3/5 lg:mt-6">
-            <h1 className=" font-semibold text-2xl  text-[#206c43] mt-4 pb-4">
-              Expert Consultation For Digestive Care
-            </h1>
-            <p className="mt-1  font-light pb-12 mx-8  ">
-              Get the best customised ayurvedic care for Digestive problems on
-              the Phone from our Experts at your comfort
-            </p>
-            <div class="flex space-x-4 lg:ml-[220px] mb-2">
-              <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 bg-[#206c43] text-white shadow-md">
-                Contact Us
-              </button>
-              <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 bg-[#318e5c] text-white shadow-md">
-                Call Now
-              </button>
-              <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 bg-[#206c43] text-white shadow-md">
-                Whatsapp
-              </button>
+          </div>
+          <div class=" flex w-full flex-col p-4 sm:w-1/2 sm:p-8 lg:w-3/5 lg:mt-6">
+          <div className="mx-6">
+          {/* content - start */}
+          <div className="md:py-8">
+            {/* name - start */}
+            <div className="mb-2 md:mb-3">
+              <span className="mb-0.5 inline-block text-gray-500">
+                Fancy Brand
+              </span>
+              <h2 className="text-2xl font-bold text-gray-800 lg:text-3xl">
+                Pullover with pattern
+              </h2>
             </div>
+            {/* name - end */}
+            {/* rating - start */}
+            <div className="mb-6 flex items-center gap-3 md:mb-10">
+              <div className="flex h-7 items-center gap-1 rounded-full bg-indigo-500 px-2 text-white">
+                <span className="text-sm">4.2</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              </div>
+              <span className="text-sm text-gray-500 transition duration-100">
+                56 ratings
+              </span>
+            </div>
+            {/* rating - end */}
+            {/* color - start */}
+            <div className="mb-4 md:mb-6">
+              <span className="mb-3 inline-block text-sm font-semibold text-gray-500 md:text-base">
+                Color
+              </span>
+              <div className="flex flex-wrap gap-2">
+                <span className="h-8 w-8 rounded-full border bg-gray-800 ring-2 ring-gray-800 ring-offset-1 transition duration-100" />
+                <button
+                  type="button"
+                  className="h-8 w-8 rounded-full border bg-gray-500 ring-2 ring-transparent ring-offset-1 transition duration-100 hover:ring-gray-200"
+                />
+                <button
+                  type="button"
+                  className="h-8 w-8 rounded-full border bg-gray-200 ring-2 ring-transparent ring-offset-1 transition duration-100 hover:ring-gray-200"
+                />
+                <button
+                  type="button"
+                  className="h-8 w-8 rounded-full border bg-white ring-2 ring-transparent ring-offset-1 transition duration-100 hover:ring-gray-200"
+                />
+              </div>
+            </div>
+            {/* color - end */}
+            {/* size - start */}
+            <div className="mb-8 md:mb-10">
+              <span className="mb-3 inline-block text-sm font-semibold text-gray-500 md:text-base">
+                Size
+              </span>
+              <div className="flex flex-wrap gap-3">
+                <button
+                  type="button"
+                  className="flex h-8 w-12 items-center justify-center rounded-md border bg-white text-center text-sm font-semibold text-gray-800 transition duration-100 hover:bg-gray-100 active:bg-gray-200"
+                >
+                  XS
+                </button>
+                <button
+                  type="button"
+                  className="flex h-8 w-12 items-center justify-center rounded-md border bg-white text-center text-sm font-semibold text-gray-800 transition duration-100 hover:bg-gray-100 active:bg-gray-200"
+                >
+                  S
+                </button>
+                <span className="flex h-8 w-12 cursor-default items-center justify-center rounded-md border border-indigo-500 bg-indigo-500 text-center text-sm font-semibold text-white">
+                  M
+                </span>
+                <button
+                  type="button"
+                  className="flex h-8 w-12 items-center justify-center rounded-md border bg-white text-center text-sm font-semibold text-gray-800 transition duration-100 hover:bg-gray-100 active:bg-gray-200"
+                >
+                  L
+                </button>
+                <span className="flex h-8 w-12 cursor-not-allowed items-center justify-center rounded-md border border-transparent bg-white text-center text-sm font-semibold text-gray-400">
+                  XL
+                </span>
+              </div>
+            </div>
+            {/* size - end */}
+            {/* price - start */}
+            <div className="mb-4">
+              <div className="flex items-end gap-2">
+                <span className="text-xl font-bold text-gray-800 md:text-2xl">
+                  $15.00
+                </span>
+                <span className="mb-0.5 text-red-500 line-through">$30.00</span>
+              </div>
+              <span className="text-sm text-gray-500">
+                incl. VAT plus shipping
+              </span>
+            </div>
+            {/* price - end */}
+            {/* shipping notice - start */}
+            <div className="mb-6 flex items-center gap-2 text-gray-500">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"
+                />
+              </svg>
+              <span className="text-sm">2-4 day shipping</span>
+            </div>
+            {/* shipping notice - end */}
+            {/* buttons - start */}
+            <div className="flex gap-2.5">
+              <a
+                href="#"
+                className="inline-block flex-1 rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 sm:flex-none md:text-base"
+              >
+                Add to cart
+              </a>
+              <a
+                href="#"
+                className="inline-block rounded-lg bg-gray-200 px-8 py-3 text-center text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base"
+              >
+                Buy now
+              </a>
+            </div>
+            {/* buttons - end */}
+          </div>
+          {/* content - end */}
+        </div>
+            
           </div>
         </div>
       </div>

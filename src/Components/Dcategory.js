@@ -16,7 +16,7 @@ const Dcategory = () => {
             <article
               key={item.id}
               onClick={() => navigate(`/category/${item.id}`)}
-              class="relative p-4 w-full  rounded-lg overflow-hidden shadow-md flex flex-col justify-center items-center bg-[#e6ffe6]"
+              class="relative p-4 w-full  rounded-lg overflow-hidden shadow-md flex flex-col justify-center items-center bg-[#F9F8F8] hover:scale-90 transition-all"
             >
               <div class="aspect-square overflow-hidden w-20 h-20 rounded-lg">
                 <img
