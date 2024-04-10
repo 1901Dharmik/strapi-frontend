@@ -237,62 +237,62 @@ const Pricing = () => {
   );
 };
 
-const Blog = () => {
+const Category = () => {
   return (
     <div>
       <div className="grid grid-cols-2 gap-2 pb-2">
-        <a href="#">
+        <Link to="#">
           <img
             className="mb-2 h-24 w-full rounded object-cover"
             src="/images/pileskit.jpg"
             alt="Placeholder image"
           />
-          <h4 className="mb-0.5 text-sm font-medium">Lorem ipsum dolor</h4>
+          <h4 className="mb-0.5 text-sm font-medium">Digestive kit 1</h4>
           <p className="text-xs text-gray-400">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet illo
             quidem eos.
           </p>
-        </a>
+        </Link>
         
-        <a href="#">
+        <Link to="#">
           <img
             className="mb-2 h-24 w-full rounded object-cover"
             src="/images/dig2.jpg"
             alt="Placeholder image"
           />
-          <h4 className="mb-0.5 text-sm font-medium">Lorem ipsum dolor</h4>
+          <h4 className="mb-0.5 text-sm font-medium">Digestive kit 2</h4>
           <p className="text-xs text-gray-400">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet illo
             quidem eos.
           </p>
-        </a>
+        </Link>
       </div>
       <div className="grid grid-cols-2 gap-2">
-        <a href="#">
+        <Link to="#">
           <img
             className="mb-2 h-24 w-full rounded object-cover"
             src="/images/pileskit.jpg"
             alt="Placeholder image"
           />
-          <h4 className="mb-0.5 text-sm font-medium">Lorem ipsum dolor</h4>
+          <h4 className="mb-0.5 text-sm font-medium">Piles kit 1</h4>
           <p className="text-xs text-gray-400">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet illo
             quidem eos.
           </p>
-        </a>
+        </Link>
         
-        <a href="#">
+        <Link to="#">
           <img
             className="mb-2 h-24 w-full rounded object-cover"
             src="/images/dig2.jpg"
             alt="Placeholder image"
           />
-          <h4 className="mb-0.5 text-sm font-medium">Lorem ipsum dolor</h4>
+          <h4 className="mb-0.5 text-sm font-medium">Piles kit 2</h4>
           <p className="text-xs text-gray-400">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet illo
             quidem eos.
           </p>
-        </a>
+        </Link>
       </div>
       <button className="ml-auto mt-4 flex items-center gap-1 text-sm text-green-800">
         <span>View more</span>
@@ -304,6 +304,10 @@ const Blog = () => {
 
 const TABS = [
   {
+    title: "Category",
+    Component: Category,
+  },
+  {
     title: "Products",
     Component: Products,
   },
@@ -311,8 +315,5 @@ const TABS = [
     title: "Pricing",
     Component: Pricing,
   },
-  {
-    title: "Blog",
-    Component: Blog,
-  },
+  
 ].map((n, idx) => ({ ...n, id: idx + 1 }));

@@ -1,8 +1,21 @@
 import React from "react";
 
 const ContentPage = () => {
+
   return (
     <div>
+     
+
+
+
+
+
+
+
+
+
+
+
       <div className="bg-gray-100 px-2 py-10">
         <article className="mx-auto my-10 flex max-w-md flex-col rounded-2xl bg-white px-4 shadow md:max-w-5xl md:flex-row md:items-center">
           <div className="shrink-0 my-4 md:mr-8 md:max-w-sm">
