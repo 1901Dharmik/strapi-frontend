@@ -25,12 +25,13 @@ const Home = () => {
   // const { data} = useFetch(
   //   `/categories?populate=*`
   // );
+  // bg-[#e6ffe6] 
   return (
     <div className="body-bg" style={{ backdropFilter: "blur(20px)" }}>
       <Meta title={"Home"} /> {/* <!-- component --> */}
       <section
         className="pt-10 overflow-hidden
-        bg-[#e6ffe6] 
+        bg-[#e6ffe6]  
        md:pt-0 sm:pt-16 2xl:pt-12 home_image "
       >
         <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">

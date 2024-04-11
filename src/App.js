@@ -29,6 +29,8 @@ import Cancel from "./pages/Cancel";
 import Success from "./pages/Success";
 import ContentPage from "./pages/ContentPage";
 import Sub_category from "./Components/Sub_category";
+import PageNotFound from "./pages/PageNotFound";
+
 
 
 
@@ -68,10 +70,14 @@ function App() {
           <Route path="success" element={<Success />} />
           <Route path="contentpage" element={<ContentPage/>}/>
         
+       
+          <Route path="*"  element={<PageNotFound />} />
          
         
         
         </Route>
+      
+      
       </Routes>
     </BrowserRouter>
   );

@@ -5,7 +5,7 @@
 
 
 :root {
-  /* background: #F5F3F3; */
+  /* background: #F5F5F7; */
 
   /* --swiper-pagination-color: var(--swiper-theme-color);
   --swiper-pagination-bullet-size: 8px;
@@ -32,8 +32,10 @@
 }
 
 .page-width {
-  padding-left: 55px;
-  padding-right: 55px;
+  /* padding-left: 55px;
+  padding-right: 55px; */
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
 .page-width {
@@ -1657,15 +1659,19 @@ h6,
 
 /*  */
 ._-cAh3 {
-  min-width: 17% !important;
+  min-width: 14% !important;
   margin: 6px 6px 6px 0px !important;
   border-radius: 8px;
 }
-@media only screen and (min-width: 350px) {
+@media only screen and (max-width: 650px) {
   ._-cAh3{
-    min-width: 22% !important;
+    min-width: 20% !important;
     margin: 6px 6px 6px 0px !important;
     border-radius: 8px;
+   
+  }
+  .carousel{
+    margin: 12px !important;
   }
 }
 ._3WRGR {
@@ -1689,7 +1695,7 @@ h6,
 }
 
 ._29p_Y {
-  right: 0 !important;
+  right: 0px !important;
   /* left:0 !important; */
 }
 
@@ -1704,6 +1710,8 @@ h6,
 .carousel img {
   border-radius: 6px;
 
+}.carousel{
+  margin:32px;
 }
 .call-section{
   background: rgb(255, 255, 255) linear-gradient(135deg, rgba(91, 228, 155, 0.2), rgba(0, 167, 111, 0.2));

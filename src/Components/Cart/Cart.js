@@ -181,7 +181,7 @@ const Cart = ({ setshowCart }) => {
                               dispatch(decreaseQuantity({ id: item.id }))
                             }
                           >
-                            <FaMinus className="mx-1 text-2xl font-semibold p-1 bg-green-100 rounded-md text-green-700 border" />
+                            <FaMinus className="mx-1 text-2xl font-semibold p-1 bg-green-100 rounded-md text-green-700 border cursor-pointer" />
                           </span>
                           <span className="text-lg pt-2">{item.quantity}</span>
                           <span
@@ -190,7 +190,7 @@ const Cart = ({ setshowCart }) => {
                               dispatch(increaseQuantity({ id: item.id }))
                             }
                           >
-                            <FaPlus className=" text-2xl border font-semibold mx-1 p-1 bg-green-100 rounded-md text-green-700" />
+                            <FaPlus className=" text-2xl border font-semibold mx-1 p-1 bg-green-100 rounded-md text-green-700 cursor-pointer" />
                           </span>
                         </div>
 

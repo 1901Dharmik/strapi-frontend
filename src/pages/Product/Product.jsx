@@ -46,11 +46,13 @@ const Product = () => {
               src="https://cdn.shopify.com/s/files/1/0575/8920/3125/files/Digestive-Care.png?v=1629541512"
               loading="lazy"
             /> */}
-            <div className="m-4 carousel">
+            <div className="m-6 carousel">
             <Carousel
               hasMediaButton={false}
               hasSizeButton={false}
-              hasLeftButto={"centerLeft"}
+              hasIndexBoard={'topRight'}
+              hasLeftButton={false}
+              hasRightButton={false}
             >
               <img
                 src={
