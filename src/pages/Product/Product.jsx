@@ -38,15 +38,15 @@ const Product = () => {
       <Meta title={data?.attributes?.title} />
       <BreadCrumb title={data?.attributes?.title} />
      
-      <div class=" overflow-hidden rounded-xl  ">
-        <div class="flex flex-col  overflow-hidden sm:flex-row ">
-          <div class="order-first ml-auto h-full w-full sm:order-none sm:h-auto sm:w-full lg:w-2/5">
+      <div class=" overflow-hidden rounded-xl">
+        <div class="flex flex-col  overflow-hidden sm:flex-row">
+          <div class="order-first  ml-auto h-full w-full sm:order-none sm:h-auto sm:w-full lg:w-2/5">
             {/* <img
               class="h-full w-full object-contain xl:px-2 xl:mt-2 "
               src="https://cdn.shopify.com/s/files/1/0575/8920/3125/files/Digestive-Care.png?v=1629541512"
               loading="lazy"
             /> */}
-            <div className="m-6 carousel">
+            <div className="m-6 carousel ">
             <Carousel
               hasMediaButton={false}
               hasSizeButton={false}
