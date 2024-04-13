@@ -10,7 +10,7 @@
 import React, { useState } from "react";
 // import { Col, div, Button, div, input } from "reactstrap";
 import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
+import toast, { Toaster } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { storeUser } from "../../helper";
 
@@ -55,7 +55,7 @@ const Login = () => {
       <BreadCrumb title="Login" /> */}
       <section className="bg-gray-50 dark:bg-gray-900">
         <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-          <a
+          {/* <a
             href="#"
             className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white"
           >
@@ -65,7 +65,7 @@ const Login = () => {
               alt="logo"
             />
             Flowbite
-          </a>
+          </a> */}
           <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
               <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
@@ -135,12 +135,12 @@ const Login = () => {
               </div>
               <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                 Don’t have an account yet?{" "}
-                <a
-                  href="#"
+                <Link
+                  to="/register"
                   className="font-medium text-green-600 hover:underline dark:text-green-500"
                 >
                   Sign up
-                </a>
+                </Link>
               </p>
             </div>
           </div>
