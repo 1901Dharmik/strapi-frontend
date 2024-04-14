@@ -14,7 +14,7 @@ console.log("data",data);
   return (
     <>
     <h2 className="font-semibold text-2xl mx-6 my-8">Releted Products</h2>
-    <div className="mx-4">
+    <div className="ml-4">
     <Swiper style={{
             "--swiper-pagination-color": "#206c43",
           }}

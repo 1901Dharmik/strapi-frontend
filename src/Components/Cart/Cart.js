@@ -66,7 +66,7 @@ const Cart = ({ setshowCart }) => {
 
   // end for quantity
   const stripePromise = loadStripe(
-    "pk_test_51M2BexSIZcM1iqYUD02P5bYSjeSGa3D5sJsUafe9iqbPFMinKJn4yz53xG4J83ZKV1T0NZ6ieZytfadOBXtxrJOz006vY104Ez"
+    process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY
   );
   const handlePayment = async () => {
     try {

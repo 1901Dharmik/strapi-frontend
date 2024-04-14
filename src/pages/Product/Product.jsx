@@ -752,6 +752,76 @@ const Product = () => {
           />
         </div>
       </div>
+ 
+
+<div class="flex justify-center items-center bg-white py-10">
+  <div class="grid lg:grid-cols-3 sm:grid-cols-1 gap-10 max-w-7xl">
+    <div class="flex flex-col items-center p-6 bg-white border rounded-lg shadow-sm">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="text-green-500 w-16 h-16"
+      >
+        <path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z"></path>
+        <path d="M7 21h10"></path>
+        <path d="M19.5 12 22 6"></path>
+        <path d="M16.25 3c.27.1.8.53.75 1.36-.06.83-.93 1.2-1 2.02-.05.78.34 1.24.73 1.62"></path>
+        <path d="M11.25 3c.27.1.8.53.74 1.36-.05.83-.93 1.2-.98 2.02-.06.78.33 1.24.72 1.62"></path>
+        <path d="M6.25 3c.27.1.8.53.75 1.36-.06.83-.93 1.2-1 2.02-.05.78.34 1.24.74 1.62"></path>
+      </svg>
+      <h2 class="mt-4 text-lg font-semibold text-gray-800">Xor Digestive Powder</h2>
+      <p class="mt-2 text-sm text-gray-600">1 spoon with warm water before sleep</p>
+    </div>
+    <div class="flex flex-col items-center p-6 bg-white border rounded-lg shadow-sm">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="text-green-500 w-16 h-16"
+      >
+        <path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"></path>
+        <path d="m8.5 8.5 7 7"></path>
+      </svg>
+      <h2 class="mt-4 text-lg font-semibold text-gray-800">Pilocool</h2>
+      <p class="mt-2 text-sm text-gray-600">2 capsules in morning and 2 capsules at night</p>
+    </div>
+    <div class="flex flex-col items-center p-6 bg-white border rounded-lg shadow-sm">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="text-green-500 w-16 h-16"
+      >
+        <path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"></path>
+        <path d="m8.5 8.5 7 7"></path>
+      </svg>
+      <h2 class="mt-4 text-lg font-semibold text-gray-800">Soulfly</h2>
+      <p class="mt-2 text-sm text-gray-600">Take 2 capsules at night after dinner</p>
+    </div>
+  </div>
+</div>
+
+
+
       <RelatedProducts
         productId={id}
         categoryId={data?.attributes.categories.data[0].id}
