@@ -37,8 +37,9 @@ const Login = () => {
           storeUser(data);
 
           toast.success("Logged in successfully!");
+          window.location.reload();
           setUser(initialUser);
-          // window.location.reload();
+         
           navigate("/");
         }
       }

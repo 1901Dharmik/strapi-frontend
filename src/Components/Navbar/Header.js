@@ -233,9 +233,10 @@ function classNames(...classes) {
 }
 
 export default function Header() {
-  const { username } = userData();
+  const {username, email} = userData();
   // const [{ basket }, dispatch] = useStateValue();
   // const { cartCount } = useContext(Context);
+  const [scrolled, setScrolled] = useState(false);
   const [show, setShow] = useState(false);
   const [showCart, setshowCart] = useState(false);
   const [searchModal, setSearchModal] = useState(false);
@@ -247,9 +248,25 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const products = useSelector((state) => state.cart.products);
 
+
+
+  const handleScroll = () => {
+    const offset = window.scrollY;
+    if (offset > 200) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+  }, []);
   return (
     <>
-      <div className="bg-white z-10 sticky top-0 backdrop-blur-lg bg-opacity-75">
+      <div className="sticky top-0 z-10 bg-white"
+      // className="bg-white z-10 sticky top-0 backdrop-blur-lg bg-opacity-75" 
+      >
         {/* Mobile menu */}
 
         <Transition.Root show={open} as={Fragment}>
@@ -838,7 +855,7 @@ export default function Header() {
           </Dialog>
         </Transition.Root>
 
-        <div>
+        <div className={`main-header ${scrolled ? "sticky-header" : ""}`}>
           <header className="relative  ">
             {/* <p className="flex h-10 items-center justify-center bg-[#206c43] px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
               Welcome To Medisy
@@ -866,7 +883,7 @@ export default function Header() {
                     <h1 className="text-xl text-[#111]">Online Gadget Store</h1> */}
                       <img
                         // className="h-[60px] w-auto"
-                        className="xl:h-[35px] sm:h-[25px] w-full"
+                        className="lg:h-[35px] smimg w-full"
                         src="./images/medicy.png"
                         alt=""
                         draggable="false"
@@ -990,7 +1007,7 @@ export default function Header() {
                         </div>
                       </li> */}
                       <li>
-                        <button className="btns text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-300">
+                        <button className="btns text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-[#eef8f0]">
                          Products
                           <svg
                             aria-hidden="true"
@@ -1485,8 +1502,8 @@ export default function Header() {
                       className="relative inline-block text-left display"
                     >
                       <div>
-                        <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900  hover:bg-gray-50">
-                          Profile
+                        <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-transparent px-3 py-2 text-sm font-medium text-gray-700  hover:bg-gray-50">
+                        {username}
                           <ChevronDownIcon
                             className="-mr-1 h-5 w-5 text-gray-400"
                             aria-hidden="true"
@@ -1513,7 +1530,7 @@ export default function Header() {
                                     active
                                       ? "bg-gray-100 text-gray-900"
                                       : "text-gray-700",
-                                    "block px-4 py-2 text-sm"
+                                    "block px-4 py-2 text-md"
                                   )}
                                 >
                                   Welcome! {username}
@@ -1530,7 +1547,7 @@ export default function Header() {
                                       : "text-gray-700",
                                     "block px-4 py-2 text-[12px]"
                                   )}
-                                ></a>
+                                >{email}</a>
                               )}
                             </Menu.Item>
                           </div>

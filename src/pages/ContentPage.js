@@ -5,6 +5,21 @@ const ContentPage = () => {
   return (
     <div>
      
+  
+<section className="bg-[#FFF5D9] flex items-center justify-between px-10 py-4">
+  <div className="space-y-2 space-x-2">
+    <h1 className="text-4xl font-bold">Sounchitra - Ayurvedic Skin Lightening Oil</h1>
+    <p className="text-lg">
+      To Reduce Dark Spots, Lighten Underarms &amp; Dark Circles, Treat Blemishes, Reduces Pigmentation with the
+      Pure Ayurvedic Care
+    </p>
+    <button className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 bg-[#D2A03D] text-white">
+      Shop Now
+    </button>
+  </div>
+  
+  <img src="/images/icerose.jpg" alt="Sounchitra - Ayurvedic Skin Lightening Oil" className="h-[300px] w-[500px] object-contain" width={500} height={300} style={{aspectRatio: '500 / 300', objectFit: 'cover'}} />
+</section>
 
 
 

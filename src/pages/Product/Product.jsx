@@ -10,6 +10,7 @@ import { ToastContainer, toast } from "react-toastify";
 import Lottie, { LottieRefCurrentProps } from "lottie-react";
 import { Link } from "react-router-dom";
 import { useRef } from "react";
+import { userData } from "../../helper";
 import corprateData from "../../assets/corporate.json";
 import consultanceData from "../../assets/consultation.json";
 import freediliveryData from "../../assets/delivery.json";
@@ -33,11 +34,28 @@ const Product = () => {
   const dispatch = useDispatch();
   const { data, loading, error } = useFetch(`/products/${id}?populate=*`);
   console.log(data, "na aaya");
+
+  const { jwt } = userData();
+  const isLoggedIn = !!jwt;
+  const handleAddToCart = () => {
+    isLoggedIn
+      ? dispatch(
+          addToCart({
+            id: data.id,
+            title: data.attributes.title,
+            desc: data.attributes.desc,
+            price: data.attributes.price,
+            img: data.attributes.img.data[0].attributes.url,
+            quantity,
+          })
+        )
+      : toast("first You Have to Regiter Ypur Account");
+  };
   return (
     <>
       <Meta title={data?.attributes?.title} />
       <BreadCrumb title={data?.attributes?.title} />
-     
+
       <div class=" overflow-hidden rounded-xl">
         <div class="flex flex-col  overflow-hidden sm:flex-row">
           <div class="order-first  ml-auto h-full w-full sm:order-none sm:h-auto sm:w-full lg:w-2/5">
@@ -47,60 +65,60 @@ const Product = () => {
               loading="lazy"
             /> */}
             <div className="m-6 carousel ">
-            <Carousel
-              hasMediaButton={false}
-              hasSizeButton={false}
-              hasIndexBoard={'topRight'}
-              hasLeftButton={false}
-              hasRightButton={false}
-            >
-              <img
-                src={
-                  // "https://strapi-backend-ui4h.onrender.com" +
-                  data?.attributes?.img?.data[0]?.attributes?.url
-                }
-              />
-              <img
-                src={
-                  // "https://strapi-backend-ui4h.onrender.com" +
-                  data?.attributes?.img?.data[1]?.attributes?.url
-                }
-              />
-              <img
-                src={
-                  // "https://strapi-backend-ui4h.onrender.com" +
-                  data?.attributes?.img2?.data[1]?.attributes?.url
-                }
-              />
-              <img
-                src={
-                  // "https://strapi-backend-ui4h.onrender.com" +
-                  data?.attributes?.img2?.data[2]?.attributes?.url
-                }
-              />
-              <img
-                src={
-                  // "https://strapi-backend-ui4h.onrender.com" +
-                  data?.attributes?.img2?.data[3]?.attributes?.url
-                }
-              />
-              <img
-                src={
-                  // "https://strapi-backend-ui4h.onrender.com" +
-                  data?.attributes?.img2?.data[4]?.attributes?.url
-                }
-              />
-            </Carousel>
-          </div>
+              <Carousel
+                hasMediaButton={false}
+                hasSizeButton={false}
+                hasIndexBoard={"topRight"}
+                hasLeftButton={false}
+                hasRightButton={false}
+              >
+                <img
+                  src={
+                    // "https://strapi-backend-ui4h.onrender.com" +
+                    data?.attributes?.img?.data[0]?.attributes?.url
+                  }
+                />
+                <img
+                  src={
+                    // "https://strapi-backend-ui4h.onrender.com" +
+                    data?.attributes?.img?.data[1]?.attributes?.url
+                  }
+                />
+                <img
+                  src={
+                    // "https://strapi-backend-ui4h.onrender.com" +
+                    data?.attributes?.img2?.data[1]?.attributes?.url
+                  }
+                />
+                <img
+                  src={
+                    // "https://strapi-backend-ui4h.onrender.com" +
+                    data?.attributes?.img2?.data[2]?.attributes?.url
+                  }
+                />
+                <img
+                  src={
+                    // "https://strapi-backend-ui4h.onrender.com" +
+                    data?.attributes?.img2?.data[3]?.attributes?.url
+                  }
+                />
+                <img
+                  src={
+                    // "https://strapi-backend-ui4h.onrender.com" +
+                    data?.attributes?.img2?.data[4]?.attributes?.url
+                  }
+                />
+              </Carousel>
+            </div>
           </div>
           <div class=" flex w-full flex-col sm:w-1/2 sm:p-8 lg:w-3/5 lg:mt-6">
-          <div className="">
-          {/* content - start */}
-          <div className="m-4">
-            <span className="product-name  text-[32px] font-semibold">
-              {data?.attributes?.title}
-            </span>
-            {/* <div className="product-rating flex">
+            <div className="">
+              {/* content - start */}
+              <div className="m-4">
+                <span className="product-name  text-[32px] font-semibold">
+                  {data?.attributes?.title}
+                </span>
+                {/* <div className="product-rating flex">
             <span>
               <AiFillStar />
             </span>
@@ -118,26 +136,26 @@ const Product = () => {
             </span>
             <span>(350 ratings)</span>
           </div> */}
-            <p className="product-description my-[15px] font-light text-[17px] lg:pr-8 sm:pr-2 text-[#6c6c6c] leading-normal">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae
-              animi ad minima veritatis dolore. Architecto facere dignissimos
-              voluptate fugit ratione molestias quis quidem exercitationem
-              voluptas.
-            </p>
+                <p className="product-description my-[15px] font-light text-[17px] lg:pr-8 sm:pr-2 text-[#6c6c6c] leading-normal">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Vitae animi ad minima veritatis dolore. Architecto facere
+                  dignissimos voluptate fugit ratione molestias quis quidem
+                  exercitationem voluptas.
+                </p>
 
-            <div className="info__price flex">
-              <span className="digestiveproduct-price font-semibold text-2xl">
-                Rs.&nbsp;{data?.attributes?.price}
-              </span>
-              <span className="origin_price text-2xl font-light font-body-3-2  pl-3 text-[#9b9b9b] line-through  mr-6">
-                Rs.&nbsp;28,999
-              </span>
-              {/* <span class="inline-flex items-center gap-x-1 py-0 px-2 rounded-lg text-[13px] font-md bg-green-100  dark:bg-blue-800/30 text-green-700 ring-1 ring-inset ring-green-600/20">Sale</span> */}
-              <span className="tag font-body-3-2 mt-1 pl-3 ">
-                (&nbsp;incl. of all taxes&nbsp;)
-              </span>
-            </div>
-            {/* <div className="btn-groups">
+                <div className="info__price flex">
+                  <span className="digestiveproduct-price font-semibold text-2xl">
+                    Rs.&nbsp;{data?.attributes?.price}
+                  </span>
+                  <span className="origin_price text-2xl font-light font-body-3-2  pl-3 text-[#9b9b9b] line-through  mr-6">
+                    Rs.&nbsp;28,999
+                  </span>
+                  {/* <span class="inline-flex items-center gap-x-1 py-0 px-2 rounded-lg text-[13px] font-md bg-green-100  dark:bg-blue-800/30 text-green-700 ring-1 ring-inset ring-green-600/20">Sale</span> */}
+                  <span className="tag font-body-3-2 mt-1 pl-3 ">
+                    (&nbsp;incl. of all taxes&nbsp;)
+                  </span>
+                </div>
+                {/* <div className="btn-groups">
                 <div className="selection-box">
                   <select className="choose">
                     <option value="option1"> 1</option>
@@ -152,61 +170,50 @@ const Product = () => {
                   <i className="fas fa-wallet"></i>Buy Now
                 </button>
               </div> */}
-            <div className="flex flex-row items-center gap-12 pt-4">
-              <div className="flex flex-row items-center">
-                <button
-                  className="bg-green-100 py-[4px] px-[14px] rounded-lg text-[#206c43] text-2xl shadow-md"
-                  onClick={() =>
-                    setQuantity((prev) => (prev === 1 ? 1 : prev - 1))
-                  }
-                >
-                  -
-                </button>
-                <span className="py-4 px-6 text-2xl rounded-lg">
-                  {" "}
-                  {quantity}
-                </span>
-                <button
-                  className="bg-green-100 py-[4px] px-[12px] shadow-md rounded-lg text-[#206c43] text-2xl"
-                  onClick={() => setQuantity((prev) => prev + 1)}
-                >
-                  +
-                </button>
-              </div>
-              <button
-                className="bg-[#206c43] text-md text-white font-semibold py-3 xl:px-12 rounded-md h-full sm:px-3 add-to-cart-pd hover:bg-[#318e4c] shadow"
-                onClick={() =>
-                  dispatch(
-                    addToCart({
-                      id: data.id,
-                      title: data.attributes.title,
-                      desc: data.attributes.desc,
-                      price: data.attributes.price,
-                      img: data.attributes.img.data[0].attributes.url,
-                      quantity,
-                    })
-                  )
-                }
-              >
-                Add To Cart
-              </button>
-            </div>
-            <ul class="reviews flex ">
-              <li className="text-[#6c6c6c] text-xl">
-                4.4{data?.attributes?.rating}
-              </li>
-              <li>
-                <img src="https://cdn.shopify.com/s/files/1/0575/8920/3125/files/reviewstar.png?v=1629806756" />
-              </li>
-              <li className="px-6 text-[#6c6c6c] text-lg italic">
-                13500+ People Using&nbsp;
-              </li>
+                <div className="flex flex-row items-center gap-12 pt-4">
+                  <div className="flex flex-row items-center">
+                    <button
+                      className="bg-green-100 py-[4px] px-[14px] rounded-lg text-[#206c43] text-2xl shadow-md"
+                      onClick={() =>
+                        setQuantity((prev) => (prev === 1 ? 1 : prev - 1))
+                      }
+                    >
+                      -
+                    </button>
+                    <span className="py-4 px-6 text-2xl rounded-lg">
+                      {" "}
+                      {quantity}
+                    </span>
+                    <button
+                      className="bg-green-100 py-[4px] px-[12px] shadow-md rounded-lg text-[#206c43] text-2xl"
+                      onClick={() => setQuantity((prev) => prev + 1)}
+                    >
+                      +
+                    </button>
+                  </div>
+                  <button
+                    onClick={handleAddToCart}
+                    className="bg-[#206c43] text-md text-white font-semibold py-3 xl:px-12 rounded-md h-full sm:px-3 add-to-cart-pd hover:bg-[#318e4c] shadow"
+                  >
+                    Add To Cart
+                  </button>
+                </div>
+                <ul class="reviews flex ">
+                  <li className="text-[#6c6c6c] text-xl">
+                    4.4{data?.attributes?.rating}
+                  </li>
+                  <li>
+                    <img src="https://cdn.shopify.com/s/files/1/0575/8920/3125/files/reviewstar.png?v=1629806756" />
+                  </li>
+                  <li className="px-6 text-[#6c6c6c] text-lg italic">
+                    13500+ People Using&nbsp;
+                  </li>
 
-              {/* <li className="float">30 Days</li> */}
-            </ul>
+                  {/* <li className="float">30 Days</li> */}
+                </ul>
 
-            <ul className="product-details">
-              {/* <div className="flex mb-2">
+                <ul className="product-details">
+                  {/* <div className="flex mb-2">
               <h5 className="w-[20%] font-semibold text-lg">Includes :-</h5>
               <div className="font-light mb-2">
                 Soulfly 30 Caps (1), Xor-Digestive Powder 100gm(1), Pilocool 60
@@ -214,7 +221,7 @@ const Product = () => {
               </div>
             </div> */}
 
-              {/* <div class="max-w-4xl mx-auto py-4 pr-6">
+                  {/* <div class="max-w-4xl mx-auto py-4 pr-6">
               <div class="flex flex-col space-y-6">
                 <div className="flex">
                   <h3 class="text-lg font-semibold ">Includes</h3>
@@ -250,48 +257,51 @@ const Product = () => {
                 </div>
               </div>
             </div> */}
-              <ul className="product-details">
-                {/* <li className="kevin pb-0 flex my-2">
+                  <ul className="product-details">
+                    {/* <li className="kevin pb-0 flex my-2">
               <h6 className="font-semibold text-lg">Care For</h6>
               <p className="mx-8">
                 <span className="inline-block bg-[#d5eadb] rounded-full px-3 py-2 text-sm font-light mr-2 mb-2 text-green-800">Stomach Gas</span> <span className="inline-block bg-[#d5eadb] text-green-800 rounded-full px-3 py-2 text-sm font-light mr-2 mb-2">Acidity</span>
                 <span className="inline-block text-green-800 bg-[#d5eadb] rounded-full px-3 py-2 text-sm font-light mr-2 mb-2">Constipation</span>
               </p>
             </li> */}
-                <li className="flex mb-[15px] my-2">
-                  <h6 className="font-semibold text-lg">Includes</h6>
-                  <p className="mx-8 text-[15px] text-gray-700 font-light lg:pr-8 sm:pr-2 ">
-                    {/* {product.includes} */}
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Hic amet, eveniet adipisci recusandae.
-                  </p>
-                </li>
+                    <li className="flex mb-[15px] my-2">
+                      <h6 className="font-semibold text-lg">Includes</h6>
+                      <p className="mx-8 text-[15px] text-gray-700 font-light lg:pr-8 sm:pr-2 ">
+                        {/* {product.includes} */}
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Hic amet, eveniet adipisci recusandae.
+                      </p>
+                    </li>
 
-                <li className="py-2 flex">
-                  <h6 className="font-semibold text-lg">Dosage</h6>
-                  <p className="text-[15px] text-gray-700 font-light">
-                    <a href="#" className="pr-1 text-[#206c43] ml-10 pt-[4px]">
-                      Click Here
-                    </a>
-                    To Download
-                  </p>
-                </li>
-                <li className="py-2 flex">
-                  <h6 className="font-semibold text-lg">Dilivery</h6>
-                  <p className="text-[15px] text-gray-700 font-light pt-[4px] ml-10">
-                    <a href="#"></a>
-                    Free Home Delivery
-                  </p>
-                </li>
-                <li className="py-2 flex">
-                  <h6 className="font-semibold text-lg">Shipping</h6>
-                  <p className="text-[15px] text-gray-700 font-light pt-[4px] ml-[30px]">
-                    <a href="#"></a>
-                    All Over India
-                  </p>
-                </li>
-              </ul>
-              {/* <div className="flex">
+                    {/* <li className="py-2 flex">
+                      <h6 className="font-semibold text-lg">Dosage</h6>
+                      <p className="text-[15px] text-gray-700 font-light">
+                        <a
+                          href="#"
+                          className="pr-1 text-[#206c43] ml-10 pt-[4px]"
+                        >
+                          Click Here
+                        </a>
+                        To Download
+                      </p>
+                    </li> */}
+                    <li className="py-2 flex">
+                      <h6 className="font-semibold text-lg">Dilivery</h6>
+                      <p className="text-[15px] text-gray-700 font-light pt-[4px] ml-10">
+                        <a href="#"></a>
+                        Free Home Delivery
+                      </p>
+                    </li>
+                    <li className="py-2 flex">
+                      <h6 className="font-semibold text-lg">Shipping</h6>
+                      <p className="text-[15px] text-gray-700 font-light pt-[4px] ml-[30px]">
+                        <a href="#"></a>
+                        All Over India
+                      </p>
+                    </li>
+                  </ul>
+                  {/* <div className="flex">
               <h5 className="w-[20%] font-semibold text-lg">Care For :-</h5>
               <span class="inline-block bg-[#d5eadb] rounded-full px-3 py-2 text-sm font-light mr-2 mb-2">
                 Gas
@@ -303,18 +313,18 @@ const Product = () => {
                 Constipation
               </span>
             </div> */}
-              {/* <li className="flex mb-[15px]">
+                  {/* <li className="flex mb-[15px]">
               <h6>Includes</h6>
               <p>{product.includes}</p>
             </li> */}
-              {/* <li className="kevin pb-2">
+                  {/* <li className="kevin pb-2">
               <h6>Care For</h6>
               <p>
                 <span>Stomach Gas</span> <span>Acidity</span>
                 <span>Constipation</span>
               </p>
             </li> */}
-              {/* <li className="py-3">
+                  {/* <li className="py-3">
               <h6>Dosage</h6>
               <p>
                 <a href="#" className="pr-1 text-[#206c43]">
@@ -323,21 +333,21 @@ const Product = () => {
                 To Download
               </p>
             </li> */}
-              {/* <li className="py-3">
+                  {/* <li className="py-3">
               <h6>Dilivery</h6>
               <p>
                 <a href="#"></a>
                 Free Home Delivery
               </p>
             </li> */}
-              {/* <li className="py-3">
+                  {/* <li className="py-3">
               <h6>Shipping</h6>
               <p>
                 <a href="#"></a>
                 All Over India
               </p>
             </li> */}
-              {/* <li className="py-3">
+                  {/* <li className="py-3">
                   <h6>Services</h6>
                   <img src="./icons/verified.png" alt="" />
                   <p className="padding-bottom">
@@ -355,9 +365,9 @@ const Product = () => {
                     alt=""
                   />
                 </li> */}
-            </ul>
-            <span className="divider" />
-            {/* <div className="info-item">
+                </ul>
+                <span className="divider" />
+                {/* <div className="info-item">
             <span className="text-bold">
               Category:{" "}
               <span>{product.categories.data[0].attributes.title}</span>
@@ -373,15 +383,14 @@ const Product = () => {
               </span>
             </span>
           </div> */}
-          </div>
-        
-          {/* content - end */}
-        </div>
-            
+              </div>
+
+              {/* content - end */}
+            </div>
           </div>
         </div>
       </div>
-      <div>
+      {/* <div>
         <Tittle
           name="Problem To Cure"
           head="If you can relate to the following conditions then you should use this product."
@@ -450,9 +459,9 @@ const Product = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/*  */}
-      <Tittle
+      {/* <Tittle
         name="Who Should Use This Product"
         head="If you can relate to the following conditions then you should use this product."
         style={{ padding: "30px" }}
@@ -497,7 +506,7 @@ const Product = () => {
             width="844"
           />
         </div>
-      </div>
+      </div> */}
       {/* <div className="m-6  ">
         <div class="bg-[#D5EADB] rounded-2xl p-10 shadow-md">
           <div class="text-center">
@@ -622,7 +631,7 @@ const Product = () => {
         </div>
       </div> */}
 
-      <section className="py-10 bg-green-200 sm:py-16 lg:py-8 mx-4 rounded-2xl shadow-lg ">
+      {/* <section className="py-10 bg-green-200 sm:py-16 lg:py-8 mx-4 rounded-2xl shadow-lg ">
         <div class="text-center">
           <h2 class="text-3xl font-bold text-green-800 mb-2">Why Choose us?</h2>
           <p class="text-[#374151] mb-8 px-2">
@@ -639,7 +648,7 @@ const Product = () => {
                     phoneRef.current?.setSpeed(0.6);
                     phoneRef.current?.setDirection(-1);
                     phoneRef.current?.play();
-                    // setshowCart(false)
+                  
                   }}
                   loop={true}
                   lottieRef={phoneRef}
@@ -657,7 +666,7 @@ const Product = () => {
                     phoneRef.current?.setSpeed(0.6);
                     phoneRef.current?.setDirection(-1);
                     phoneRef.current?.play();
-                    // setshowCart(false)
+                   
                   }}
                   loop={true}
                   lottieRef={phoneRef}
@@ -665,7 +674,7 @@ const Product = () => {
                 />
               </div>
               <h3 className="mt-8 text-lg font-semibold text-black">
-                {/* Fast &amp; Easy to Load */}
+             
                 Free Home Delivery
               </h3>
             </div>
@@ -676,7 +685,7 @@ const Product = () => {
                     phoneRef.current?.setSpeed(0.6);
                     phoneRef.current?.setDirection(-1);
                     phoneRef.current?.play();
-                    // setshowCart(false)
+                  
                   }}
                   loop={true}
                   lottieRef={phoneRef}
@@ -684,7 +693,7 @@ const Product = () => {
                 />
               </div>
               <h3 className="mt-8 text-lg font-semibold text-black">
-                {/* Light &amp; Dark Version */}
+              
                 Assured Quality
               </h3>
             </div>
@@ -695,7 +704,7 @@ const Product = () => {
                     phoneRef.current?.setSpeed(0.6);
                     phoneRef.current?.setDirection(-1);
                     phoneRef.current?.play();
-                    // setshowCart(false)
+                  
                   }}
                   loop={true}
                   lottieRef={phoneRef}
@@ -708,119 +717,84 @@ const Product = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/*  */}
-      <div className="flex  my-8">
-        <div className="flex flex-col w-1/2 p-8 space-y-6">
-          <div className="flex items-center space-x-4">
-            <div className="text-3xl font-bold text-gray-700">01</div>
-            <p className="text-lg text-gray-600">
-              {data?.attributes?.prodinfo?.title1}
+   
+
+      {/* <div class="flex justify-center items-center bg-white py-10">
+        <div class="grid lg:grid-cols-3 sm:grid-cols-1 gap-10 max-w-7xl">
+          <div class="flex flex-col items-center p-6 bg-white border rounded-lg shadow-sm">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="text-green-500 w-16 h-16"
+            >
+              <path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z"></path>
+              <path d="M7 21h10"></path>
+              <path d="M19.5 12 22 6"></path>
+              <path d="M16.25 3c.27.1.8.53.75 1.36-.06.83-.93 1.2-1 2.02-.05.78.34 1.24.73 1.62"></path>
+              <path d="M11.25 3c.27.1.8.53.74 1.36-.05.83-.93 1.2-.98 2.02-.06.78.33 1.24.72 1.62"></path>
+              <path d="M6.25 3c.27.1.8.53.75 1.36-.06.83-.93 1.2-1 2.02-.05.78.34 1.24.74 1.62"></path>
+            </svg>
+            <h2 class="mt-4 text-lg font-semibold text-gray-800">
+              Xor Digestive Powder
+            </h2>
+            <p class="mt-2 text-sm text-gray-600">
+              1 spoon with warm water before sleep
             </p>
           </div>
-          <div className="flex items-center space-x-4">
-            <div className="text-3xl font-bold text-gray-700">02</div>
-            <p className="text-lg text-gray-600">
-              {data?.attributes?.who_can_use_t2}
+          <div class="flex flex-col items-center p-6 bg-white border rounded-lg shadow-sm">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="text-green-500 w-16 h-16"
+            >
+              <path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"></path>
+              <path d="m8.5 8.5 7 7"></path>
+            </svg>
+            <h2 class="mt-4 text-lg font-semibold text-gray-800">Pilocool</h2>
+            <p class="mt-2 text-sm text-gray-600">
+              2 capsules in morning and 2 capsules at night
             </p>
           </div>
-          <div className="flex items-center space-x-4">
-            <div className="text-3xl font-bold text-gray-700">03</div>
-            <p className="text-lg text-gray-600">
-              {data?.attributes?.who_can_use_t3}
-            </p>
-          </div>
-          <div className="flex items-center space-x-4">
-            <div className="text-3xl font-bold text-gray-700">04</div>
-            <p className="text-lg text-gray-600">
-              {data?.attributes?.who_can_use_t4}
+          <div class="flex flex-col items-center p-6 bg-white border rounded-lg shadow-sm">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="text-green-500 w-16 h-16"
+            >
+              <path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"></path>
+              <path d="m8.5 8.5 7 7"></path>
+            </svg>
+            <h2 class="mt-4 text-lg font-semibold text-gray-800">Soulfly</h2>
+            <p class="mt-2 text-sm text-gray-600">
+              Take 2 capsules at night after dinner
             </p>
           </div>
         </div>
-        <div className="w-1/2 mx-5">
-          <img
-            alt="Healthcare"
-            className="object-cover w-full h-full"
-            height="580"
-            src={data?.attributes?.who_can_use_i1?.data?.attributes?.url}
-            style={{
-              aspectRatio: "844/580",
-              objectFit: "cover",
-            }}
-            width="844"
-          />
-        </div>
-      </div>
- 
-
-<div class="flex justify-center items-center bg-white py-10">
-  <div class="grid lg:grid-cols-3 sm:grid-cols-1 gap-10 max-w-7xl">
-    <div class="flex flex-col items-center p-6 bg-white border rounded-lg shadow-sm">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        class="text-green-500 w-16 h-16"
-      >
-        <path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z"></path>
-        <path d="M7 21h10"></path>
-        <path d="M19.5 12 22 6"></path>
-        <path d="M16.25 3c.27.1.8.53.75 1.36-.06.83-.93 1.2-1 2.02-.05.78.34 1.24.73 1.62"></path>
-        <path d="M11.25 3c.27.1.8.53.74 1.36-.05.83-.93 1.2-.98 2.02-.06.78.33 1.24.72 1.62"></path>
-        <path d="M6.25 3c.27.1.8.53.75 1.36-.06.83-.93 1.2-1 2.02-.05.78.34 1.24.74 1.62"></path>
-      </svg>
-      <h2 class="mt-4 text-lg font-semibold text-gray-800">Xor Digestive Powder</h2>
-      <p class="mt-2 text-sm text-gray-600">1 spoon with warm water before sleep</p>
-    </div>
-    <div class="flex flex-col items-center p-6 bg-white border rounded-lg shadow-sm">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        class="text-green-500 w-16 h-16"
-      >
-        <path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"></path>
-        <path d="m8.5 8.5 7 7"></path>
-      </svg>
-      <h2 class="mt-4 text-lg font-semibold text-gray-800">Pilocool</h2>
-      <p class="mt-2 text-sm text-gray-600">2 capsules in morning and 2 capsules at night</p>
-    </div>
-    <div class="flex flex-col items-center p-6 bg-white border rounded-lg shadow-sm">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        class="text-green-500 w-16 h-16"
-      >
-        <path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"></path>
-        <path d="m8.5 8.5 7 7"></path>
-      </svg>
-      <h2 class="mt-4 text-lg font-semibold text-gray-800">Soulfly</h2>
-      <p class="mt-2 text-sm text-gray-600">Take 2 capsules at night after dinner</p>
-    </div>
-  </div>
-</div>
-
-
+      </div> */}
 
       <RelatedProducts
         productId={id}

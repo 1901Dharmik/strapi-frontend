@@ -21,7 +21,7 @@ const Layout = () => {
         widgetWidthMobile="300px"
         autoOpen={false}
         autoOpenTimer={5000}
-        messageBox={true}
+        messageBox={false}
         messageBoxTxt=""
         iconSize="50"
         iconColor="white"

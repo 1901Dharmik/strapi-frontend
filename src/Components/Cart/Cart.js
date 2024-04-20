@@ -148,7 +148,7 @@ const Cart = ({ setshowCart }) => {
                     class="flex py-6 p-4 border-b overflow-hidden "
                   >
                     <div class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-                      <Link to={`/product/${item.id}`}>
+                      <Link to={`/product/${item.id}`}  onClick={() => setshowCart(false)}>
                         <img
                           src={item.img}
                           alt="Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch."

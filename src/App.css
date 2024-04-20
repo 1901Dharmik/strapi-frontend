@@ -1090,7 +1090,7 @@ ul li {
 
 .navigation>li:hover>button {
   /* color: gray; */
-  background-color: #f4f5f7;
+  background-color: #eef8f0;
 
 }
 
@@ -1180,12 +1180,16 @@ ul li {
 
 /* header scroll animation */
 .sticky-header {
-  background-color: #212121;
-  color: white;
+  background-color: #fff;
+  /* color: white; */
+  background:#fff;
+
+
   position: sticky;
   top: 0;
   transform: translateY(-160px);
   animation: StickyHeader 0.7s ease forwards;
+  
 }
 
 @keyframes StickyHeader {
@@ -1663,17 +1667,23 @@ h6,
   margin: 6px 6px 6px 0px !important;
   border-radius: 8px;
 }
+
 @media only screen and (max-width: 650px) {
-  ._-cAh3{
+  ._-cAh3 {
     min-width: 20% !important;
     margin: 6px 6px 6px 0px !important;
     border-radius: 8px;
-   
+
   }
-  .carousel{
+
+  .carousel {
     margin: 12px !important;
+  }.smimg{
+    height: 35px !important;
+    width: 100px !important;
   }
 }
+
 ._3WRGR {
   fill: white !important;
   opacity: 1 !important;
@@ -1687,7 +1697,7 @@ h6,
   padding: 7px 7px 8px 7px !important;
   margin-right: 6px !important;
   border-radius: 50% !important;
-  
+
 }
 
 .__JnHV {
@@ -1710,10 +1720,13 @@ h6,
 .carousel img {
   border-radius: 6px;
 
-}.carousel{
-  margin:32px;
 }
-.call-section{
+
+.carousel {
+  margin: 32px;
+}
+
+.call-section {
   background: rgb(255, 255, 255) linear-gradient(135deg, rgba(91, 228, 155, 0.2), rgba(0, 167, 111, 0.2));
 }
 
@@ -1735,7 +1748,7 @@ h6,
   display: inline-block;
   flex-direction: row;
   flex-shrink: 0;
-  font-family: Eina01,sans-serif;
+  font-family: Eina01, sans-serif;
   font-size: 16px;
   font-weight: 800;
   justify-content: center;
@@ -1822,3 +1835,5 @@ h6,
   cursor: default;
   opacity: .24;
 }
+
+

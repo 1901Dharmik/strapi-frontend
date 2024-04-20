@@ -18,6 +18,7 @@ import { FreeMode, Pagination, Autoplay } from "swiper/modules";
 import Dcategory from "../Components/Dcategory";
 import Carousel from "../Components/Carousel/Carousel";
 
+
 // import SubCategory from "../Components/Categories/SubCategory";
 
 const Home = () => {
@@ -72,6 +73,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+      
       {/* <button className="button-42" role="button">Button 42</button> */}
       {/* <section className="bg-white m-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-0 pt-4 flex justify-between items-center">
@@ -499,7 +501,7 @@ const Home = () => {
         style={{ padding: "30px" }}
       />
       <Dcategory />
-      <Tittle
+      {/* <Tittle
         name="Select By Care"
         head="improve your digestive health and prevent health problems"
         style={{ padding: "30px" }}
@@ -511,10 +513,8 @@ const Home = () => {
         <Link to="/category/2">
           <img src="/images/dd2.jpg" alt="" className="rounded-xl shadow-md" />
         </Link>
-        {/* <img src="/images/dd3.jpg" alt="" className="rounded-xl shadow-md" />
-
-<img src="/images/dd4.jpg" alt="" className="rounded-xl shadow-md" /> */}
-      </div>
+       
+      </div> */}
       <Tittle
         name="Nutrition Care"
         head="
@@ -547,12 +547,16 @@ const Home = () => {
               <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 bg-[#3f9c3a] text-white shadow-md">
                 Contact Us
               </button>
+              <Link to="tel:+91%208490059352">
               <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 bg-[#54ae3c] text-white shadow-md">
                 Call Now
               </button>
+              </Link>
+              <Link to="http://wa.me/918490059352">
               <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 bg-[#3f9c3a] text-white shadow-md">
                 Whatsapp
               </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -624,21 +628,20 @@ const Home = () => {
         style={{ padding: "30px" }}
       />
       <FeaturedProducts type="Piles Care" />
-      <Tittle
+      {/* <Tittle
         name="Select By Care"
         head="improve your digestive health and prevent health problems"
         style={{ padding: "30px" }}
       />
       <div className="grid lg:grid-cols-2 sm:grid-cols-1 py-6 mx-6 gap-4 ">
-        {/* <img src="/images/dd1.jpg" alt="" className="rounded-xl shadow-md" />
-        <img src="/images/dd2.jpg" alt="" className="rounded-xl shadow-md" /> */}
+       
         <Link to="/category/2">
           <img src="/images/dd3.jpg" alt="" className="rounded-xl shadow-md" />
         </Link>
         <Link to="/category/1">
           <img src="/images/dd4.jpg" alt="" className="rounded-xl shadow-md" />
         </Link>
-      </div>
+      </div> */}
       <div class="m-10 mx-4 overflow-hidden rounded-xl   shadow-lg ">
         <div class="flex flex-col  overflow-hidden  bg-[#ecf6ed] sm:flex-row md:h-80">
           <div class="order-first ml-auto h-48 w-full bg-[#ecf6ed] sm:order-none sm:h-auto sm:w-full lg:w-2/5">
@@ -660,12 +663,17 @@ const Home = () => {
               <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 bg-[#3f9c3a] text-white shadow-md">
                 Contact Us
               </button>
+              <Link to="tel:+91%208490059352">
               <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 bg-[#54ae3c] text-white shadow-md">
                 Call Now
               </button>
+              </Link>
+              <Link to="http://wa.me/918490059352">
+             
               <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 bg-[#3f9c3a] text-white shadow-md">
                 Whatsapp
               </button>
+              </Link>
             </div>
           </div>
         </div>
