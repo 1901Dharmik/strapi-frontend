@@ -1841,3 +1841,16 @@ h6,
     right: 5.5% !important;
   }
 }
+.ict h1{
+  padding-bottom: 16px;
+  margin-top: 16px;
+  color: #3f9c3a;
+  font-size: 1.5rem/* 24px */;
+    line-height: 2rem/* 32px */;
+    font-weight: 600;
+
+}.ict p{
+  margin-top: 4px;
+  margin-bottom: 25px;
+  font-weight: 200;
+}

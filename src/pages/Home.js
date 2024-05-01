@@ -538,7 +538,7 @@ const Home = () => {
     <div className="order-first ml-auto h-48 w-full bg-[#ecf6ed] sm:order-none sm:h-auto sm:w-full lg:w-2/5">
       <img className="h-full w-full object-contain xl:px-2 xl:mt-2 " src="https://cdn.shopify.com/s/files/1/0575/8920/3125/files/Weight-Loss-Care.png?v=1629540167" loading="lazy" />
     </div>
-    <div className="text-center flex w-full flex-col p-4 sm:w-1/2 sm:p-8 lg:w-3/5 lg:mt-6">
+    <div className="text-center flex w-full flex-col p-4 sm:w-1/2 sm:p-8 lg:w-3/5 lg:mt-6 ict">
       <h1 classname=" font-semibold text-2xl  text-[#3f9c3a] mt-4 pb-4">
         Expert Consultation For Digestive Care
       </h1>
@@ -644,16 +644,16 @@ const Home = () => {
           <img src="/images/dd4.jpg" alt="" className="rounded-xl shadow-md" />
         </Link>
       </div> */}
-     <div className="m-10 mx-4 overflow-hidden rounded-xl   shadow-lg ">
+     <div className="m-10 mx-4 overflow-hidden rounded-xl shadow-lg ">
   <div className="flex flex-col  overflow-hidden  bg-[#ecf6ed] sm:flex-row md:h-80">
     <div className="order-first ml-auto h-48 w-full bg-[#ecf6ed] sm:order-none sm:h-auto sm:w-full lg:w-2/5">
       <img className="h-full w-full object-contain xl:px-2 xl:mt-2 " src="https://cdn.shopify.com/s/files/1/0575/8920/3125/files/Weight-Loss-Care.png?v=1629540167" loading="lazy" />
     </div>
-    <div className="text-center flex w-full flex-col p-4 sm:w-1/2 sm:p-8 lg:w-3/5 lg:mt-6">
+    <div className="text-center flex w-full flex-col p-4 sm:w-1/2 sm:p-8 lg:w-3/5 lg:mt-6 ict">
       <h1 classname=" font-semibold text-2xl  text-[#3f9c3a] mt-4 pb-4">
         Expert Consultation For Digestive Care
       </h1>
-      <p classname="mt-1  font-light pb-12 mx-8  ">
+      <p classname="mt-1 font-light pb-12 mx-8  ">
         Get the best customised ayurvedic care for Digestive problems on
         the Phone from our Experts at your comfort
       </p>
