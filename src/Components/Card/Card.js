@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/cartReducer";
+import { userData } from "../../helper";
 // import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import toast, { Toaster } from "react-hot-toast";
 
@@ -19,6 +20,23 @@ const Card = ({ item }) => {
   }, []);
   const dispatch = useDispatch();
   console.log(item);
+
+  const { jwt } = userData();
+  const isLoggedIn = !!jwt;
+  const handleAddToCart = () => {
+    isLoggedIn
+      ? dispatch(
+          addToCart({
+            id: item.id,
+            title: item.attributes.title,
+            desc: item.attributes.desc,
+            price: item.attributes.price,
+            img: item.attributes.img.data[0].attributes.url,
+            quantity,
+          })
+        )
+      : toast("first You Have to login Your Account");
+  };
   return (
     <>
       {/* <div className="grid xl:grid-cols-4 gap-3 pl-6 pt-6 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 overflow-scroll"> */}
@@ -116,24 +134,7 @@ const Card = ({ item }) => {
 
             <button
               className="bg-[#206c43] dark:bg-gray-700 py-[10px] w-[50%] rounded-br-[19px] text-white font-semibold"
-              onClick={() =>
-                dispatch(
-                  addToCart({
-                    id: item.id,
-                    title: item.attributes.title,
-                    desc: item.attributes.desc,
-                    price: item.attributes.price,
-                    img: item.attributes.img.data[0].attributes.url,
-                    quantity,
-                  })
-                ) &&
-                toast.success(
-                  `${item.attributes.title.substring(
-                    0,
-                    15
-                  )} added successfully!`
-                )
-              }
+              onClick={handleAddToCart}
             >
               Add To Cart
             </button>

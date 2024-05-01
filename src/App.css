@@ -505,8 +505,8 @@ ul li {
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
-  border: 2px solid rgba(0, 0, 0, 0.16);
-  border-radius: 8px;
+  /* border: 2px solid rgba(0, 0, 0, 0.16);
+  border-radius: 8px; */
 }
 
 .search-col {
@@ -1534,7 +1534,7 @@ h6,
 .guj {
   font-family: "Noto Sans Gujarati", sans-serif !important;
   font-optical-sizing: auto;
-  font-size: 23px;
+  /* font-size: 23px; */
   margin: 10px;
   font-style: normal;
 }
@@ -1836,4 +1836,8 @@ h6,
   opacity: .24;
 }
 
-
+@media only screen and (max-width: 600px) {
+  .form-field svg {
+    right: 5.5% !important;
+  }
+}

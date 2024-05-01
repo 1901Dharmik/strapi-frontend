@@ -1268,10 +1268,11 @@ export default function Header() {
                     >
                       <a className="p-2 text-gray-600 hover:text-[#206c43] lg:mr-5 hover:border hover:rounded-[50%] hover:bg-[rgba(40,167,69,.0784)]">
                         <span className="sr-only">Search</span>
-                        <MagnifyingGlassIcon
+                        {/* <MagnifyingGlassIcon
                           className="h-6 w-6"
                           aria-hidden="true"
-                        />
+                        /> */}
+                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14" height={20} width={20} id="Magnifying-Glass--Streamline-Flex" ><desc>{"Magnifying Glass Streamline Icon: https://streamlinehq.com"}</desc><g id="magnifying-glass--glass-search-magnifying"><path id="Vector" stroke="#206c43" strokeLinecap="round" strokeLinejoin="round" d="m13.25 13.25 -2.2585 -2.2585" strokeWidth={1} /><path id="Vector_2" fill="#eef8f0" d="M6.62497 12.4999c3.75993 0 5.87493 -2.115 5.87493 -5.87493C12.4999 2.86499 10.3849 0.75 6.62497 0.75 2.86499 0.75 0.75 2.86499 0.75 6.62497c0 3.75993 2.11499 5.87493 5.87497 5.87493Z" strokeWidth={1} /><path id="Vector_3" stroke="#206c43" strokeLinecap="round" strokeLinejoin="round" d="M6.62497 12.4999c3.75993 0 5.87493 -2.115 5.87493 -5.87493C12.4999 2.86499 10.3849 0.75 6.62497 0.75 2.86499 0.75 0.75 2.86499 0.75 6.62497c0 3.75993 2.11499 5.87493 5.87497 5.87493Z" strokeWidth={1} /></g></svg>
                       </a>
                     </div>
 
@@ -1464,10 +1465,12 @@ export default function Header() {
                           // onClick={() => setShow(!show)}
                           className="group  flex items-center p-2 hover:border hover:rounded-md hover:bg-[rgba(40,167,69,.0784)] "
                         >
-                          <ShoppingBagIcon
+                          {/* <ShoppingBagIcon
                             className="h-6 w-6 flex-shrink-0 text-gray-600 group-hover:text-[#206c43]"
                             aria-hidden="true"
-                          />
+                          /> */}
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="#EEF8F0" viewBox="0 0 14 14" height={20} width={20} id="Shopping-Bag-Hand-Bag-2--Streamline-Flex" ><desc>{"Shopping Bag Hand Bag 2 Streamline Icon: https://streamlinehq.com"}</desc><g id="shopping-bag-hand-bag-2--shopping-bag-purse-goods-item-products"><path id="Vector 193" stroke="#206c43" strokeLinecap="round" strokeLinejoin="round" d="M4.5 4.25v-1C4.5 1.86929 5.61929 0.75 7 0.75v0c1.38071 0 2.5 1.11929 2.5 2.5v1" strokeWidth={1} /><path id="Vector 191" stroke="#206c43" strokeLinecap="round" strokeLinejoin="round" d="M1 10.25c0 -2.0712 0.37239 -3.73278 0.79579 -5.27397 0.11827 -0.43053 0.51203 -0.72603 0.95851 -0.72603h8.4914c0.4465 0 0.8402 0.2955 0.9585 0.72603C12.6276 6.51722 13 8.1788 13 10.25c0 1.5 -0.9728 2.5204 -2.5 2.7602 -0.88896 0.1396 -2 0.2398 -3.5 0.2398s-2.61104 -0.1002 -3.5 -0.2398C1.97277 12.7704 1 11.75 1 10.25Z" strokeWidth={1} /></g></svg>
+                         
                           <span className="ml-2 text-sm font-medium text-gray group-hover:text-[#206c43]">
                             {products.length}
                           </span>
@@ -1479,20 +1482,7 @@ export default function Header() {
                     </div>
                     <div className="hover:border hover:rounded-[50%] p-2 hover:bg-[rgba(40,167,69,.0784)]">
                       <NavLink to="./Login">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          strokeWidth={1.5}
-                          stroke="currentColor"
-                          className="w-6 h-6 text-gray-600 hover:text-[#206c43] "
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
-                          />
-                        </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14" height={22} width={22} id="User-Circle-Single--Streamline-Flex" ><desc>{"User Circle Single Streamline Icon: https://streamlinehq.com"}</desc><g id="user-circle-single--circle-geometric-human-person-single-user"><path id="Vector" fill="#eef8f0" d="M7 13.5c4.16 0 6.5 -2.34 6.5 -6.5S11.16 0.5 7 0.5 0.5 2.84 0.5 7s2.34 6.5 6.5 6.5Z" strokeWidth={1} /><path id="Intersect" fill="#ffffff" d="M10.7042 12.647c-0.99234 0.561 -2.23472 0.853 -3.7042 0.853 -1.46954 0 -2.71196 -0.292 -3.70435 -0.8531v-0.6124c0.20645 -0.7775 0.65299 -1.4723 1.27877 -1.9838 0.68452 -0.55951 1.54143 -0.86515 2.42552 -0.86515s1.74099 0.30564 2.42552 0.86515c0.62574 0.5115 1.07234 1.2063 1.27874 1.9838v0.6125Z" strokeWidth={1} /><path id="Intersect_2" stroke="#206c43" strokeLinecap="round" strokeLinejoin="round" d="M10.7042 12.0345c-0.2064 -0.7775 -0.653 -1.4723 -1.27874 -1.9838 -0.68453 -0.55951 -1.54143 -0.86515 -2.42552 -0.86515s-1.741 0.30564 -2.42552 0.86515c-0.62578 0.5115 -1.07232 1.2063 -1.27877 1.9838" strokeWidth={1} /><path id="Vector_2" stroke="#206c43" strokeLinecap="round" strokeLinejoin="round" d="M7 13.5c4.16 0 6.5 -2.34 6.5 -6.5S11.16 0.5 7 0.5 0.5 2.84 0.5 7s2.34 6.5 6.5 6.5Z" strokeWidth={1} /><path id="Vector_3" fill="#ffffff" d="M6.99927 7.57996c1.4 0 2.1875 -0.7875 2.1875 -2.1875s-0.7875 -2.1875 -2.1875 -2.1875 -2.1875 0.7875 -2.1875 2.1875 0.7875 2.1875 2.1875 2.1875Z" strokeWidth={1} /><path id="Vector_4" stroke="#206c43" strokeLinecap="round" strokeLinejoin="round" d="M6.99927 7.57996c1.4 0 2.1875 -0.7875 2.1875 -2.1875s-0.7875 -2.1875 -2.1875 -2.1875 -2.1875 0.7875 -2.1875 2.1875 0.7875 2.1875 2.1875 2.1875Z" strokeWidth={1} /></g></svg>
                         {/* <ChevronDownIcon className="-mr-1 h-5 w-5 text-gray-400 flex" aria-hidden="true" /> */}
                       </NavLink>
                     </div>
@@ -1508,6 +1498,7 @@ export default function Header() {
                             className="-mr-1 h-5 w-5 text-gray-400"
                             aria-hidden="true"
                           />
+                     
                         </Menu.Button>
                       </div>
 

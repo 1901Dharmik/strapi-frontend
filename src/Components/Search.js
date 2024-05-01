@@ -30,7 +30,7 @@ const Search = ({ setSearchModal }) => {
             placeholder="Search For Products"
           />
 
-          <svg
+          {/* <svg
             onClick={() => setSearchModal(false)}
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -44,7 +44,8 @@ const Search = ({ setSearchModal }) => {
               strokeLinejoin="round"
               d="M6 18L18 6M6 6l12 12"
             />
-          </svg>
+          </svg> */}
+          <svg onClick={() => setSearchModal(false)} xmlns="http://www.w3.org/2000/svg" fill="#EEF8F0" viewBox="0 0 14 14" height={32} width={32} id="Block-2--Streamline-Flex" ><desc>{"Block 2 Streamline Icon: https://streamlinehq.com"}</desc><g id="block-2--remove-circle-garbage-trash-delete-cross-x"><path id="Vector" stroke="#206c43" strokeLinecap="round" strokeLinejoin="round" d="M7 13.25c4 0 6.25 -2.25 6.25 -6.25S11 0.75 7 0.75 0.75 3 0.75 7 3 13.25 7 13.25Z" strokeWidth={1} /><path id="Vector_2" stroke="#206c43" strokeLinecap="round" strokeLinejoin="round" d="m2.375 11.625 9.25 -9.25" strokeWidth={1} /><path id="Vector_3" stroke="#206c43" strokeLinecap="round" strokeLinejoin="round" d="m11.625 11.625 -9.25 -9.25" strokeWidth={1} /></g></svg>
         </div>
        
        

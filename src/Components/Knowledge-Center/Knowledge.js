@@ -223,21 +223,7 @@ const Knowledge = () => {
 
       {currentSection === 2 && (
         <Knowdetail
-          tittle="Acidity"
-          text="The stomach secretes acid which is used to digest food. Spicy food or a weak LES(muscles that prevent stomach contents from travelling back) can trigger excess production of acid causing pain and a burning sensation which is called acidity."
-          src="https://cdn.shopify.com/s/files/1/0575/8920/3125/files/KC_-Acidity.jpg?v=1645099952"
-          h1="Carbonated Drinks"
-          h2="Stomach Ulcer"
-          h3="Eating Habits"
-          h4="Food Intolerance"
-          h5="Frequent Constipation"
-          h6="Bacteria Overgrowth"
-          p1="Drinks like soda, beer contributes to more swallowed air in the tummy that causes gas."
-          p2="It can cause a feeling of bloating, heaviness and pain in the morning or after meals."
-          p3="Not chewing the food properly increase the efforts of the digestive system that causes gas."
-          p4="The inability to break certain food particles in the digestive system causes gas."
-          p5="Constipation obstructs the discharge of intestinal matter that leads to stomach gas."
-          p6="Due to surgeries or medical issues, excess bacterial growth can occur in the small intestine."
+         
           name="Causes Of Acidity"
           head="The problem of acidity occurs due to"
           name2="Do You Know"
@@ -254,21 +240,7 @@ const Knowledge = () => {
       {currentSection === 1 && (
         <div>
           <Knowdetail
-            tittle="Stomach Gas"
-            text="Swallowed air while eating or drinking and undigested food in our intestine produces gas. This gas is released through the rectum or mouth, but excessive gas that can be trapped in the digestive tract causes discomfort is called stomach gas."
-            src="https://cdn.shopify.com/s/files/1/0575/8920/3125/files/Knowledge_-_Video_thumbnail_f9cc127b-2d43-4791-842c-fdd1d6e41938.jpg?v=1645103426"
-            h1="Carbonated Drinks"
-            h2="Stomach Ulcer"
-            h3="Eating Habits"
-            h4="Food Intolerance"
-            h5="Frequent Constipation"
-            h6="Bacteria Overgrowth"
-            p1="Drinks like soda, beer contributes to more swallowed air in the tummy that causes gas."
-            p2="It can cause a feeling of bloating, heaviness and pain in the morning or after meals."
-            p3="Not chewing the food properly increase the efforts of the digestive system that causes gas."
-            p4="The inability to break certain food particles in the digestive system causes gas."
-            p5="Constipation obstructs the discharge of intestinal matter that leads to stomach gas."
-            p6="Due to surgeries or medical issues, excess bacterial growth can occur in the small intestine."
+         
             name="Causes Of Stomach Gas"
             head="The problem of Stomach Gas occurs due to"
             name2="Do You Know"

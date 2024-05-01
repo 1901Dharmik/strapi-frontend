@@ -30,7 +30,7 @@ const Product = () => {
   const id = useParams().id;
   const [selectedImg, setSelectedImg] = useState("img");
   const [quantity, setQuantity] = useState(1);
-
+ 
   const dispatch = useDispatch();
   const { data, loading, error } = useFetch(`/products/${id}?populate=*`);
   console.log(data, "na aaya");
@@ -49,8 +49,12 @@ const Product = () => {
             quantity,
           })
         )
-      : toast("first You Have to Regiter Ypur Account");
+      : toast("first You Have to Login Your Account");
   };
+   // 
+  //  const imageUrl = data.attributes.img.data.attributes.url;
+  //  console.log("imagedata",img)
+ // 
   return (
     <>
       <Meta title={data?.attributes?.title} />
@@ -108,6 +112,7 @@ const Product = () => {
                     data?.attributes?.img2?.data[4]?.attributes?.url
                   }
                 />
+       
               </Carousel>
             </div>
           </div>
@@ -136,6 +141,8 @@ const Product = () => {
             </span>
             <span>(350 ratings)</span>
           </div> */}
+           
+               
                 <p className="product-description my-[15px] font-light text-[17px] lg:pr-8 sm:pr-2 text-[#6c6c6c] leading-normal">
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                   Vitae animi ad minima veritatis dolore. Architecto facere

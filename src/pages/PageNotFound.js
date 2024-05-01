@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import MegaMenu from "../Components/MegaMenu";
 const PageNotFound = () => {
   return (
+    <>
     <div>
       <div className="">
         <div class=" bg-[#f5f5f7]">
@@ -24,7 +26,11 @@ const PageNotFound = () => {
           </div>
         </div>
       </div>
+
+
     </div>
+    <MegaMenu />
+    </>
   );
 };
 

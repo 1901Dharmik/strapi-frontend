@@ -1,6 +1,8 @@
 import React from 'react';
 import { useState } from 'react';
 import { Tab, Popover } from '@headlessui/react'
+import ImgChange from '../Components/ImgChange';
+import Compo from '../Components/Compo';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -308,6 +310,9 @@ const OrderDetails = () => {
         </div>
     </div>
 </section>
+
+<ImgChange />
+<Compo/>
 
     </>
   );

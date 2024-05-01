@@ -220,7 +220,7 @@ const Pricing = () => {
         <span className="text-xs">Startup</span>
       </Link>
       <a
-        href="#"
+        href="./contact"
         className="flex w-full flex-col items-center justify-center py-2 text-gray-400 transition-colors hover:text-gray-700"
       >
         <FiBarChart2 className="mb-2 text-xl text-green-800" />
